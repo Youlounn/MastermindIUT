@@ -22,25 +22,6 @@ class VueConnection{
     <?php
   }
 
-  function reussie(){
-    header("Content-type: text/html; charset=utf-8");
-    ?>
-    <html>
-    <body>
-      <h1>Connection</h1>
-      <br/>
-      <br/>
-        <h3>Connection reussie <?php echo $_SESSION['pseudo']; ?></h3>
-        <form method="post" action="index.php">
-          <input type="hidden" name="sendType" value="2">
-          <input type="submit" name="deco" value="Deconnection"/>
-        </form>
-      <br/>
-      <br/>
-    </body>
-    <?php
-  }
-
   function echec($e){
     header("Content-type: text/html; charset=utf-8");
     ?>
