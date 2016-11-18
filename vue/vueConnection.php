@@ -13,9 +13,9 @@ class VueConnection{
     </head>
     <body>
       <header>
-        <p class="title">Connection</p>
+        <div class="page">Connection</div>
+        <div class="title">Mastermind</div>
       </header>
-      <h1>Connection</h1>
       <br/>
       <br/>
       <div class="form">
@@ -23,7 +23,7 @@ class VueConnection{
         <input type="text" name="nom"  placeholder="Pseudo"/><br />
         <input type="password" name="mdp" placeholder="Mot De Passe"/><br />
         <input type="hidden" name="sendType" value="1">
-        <input type="submit" name="connection" value="Envoyer"/>
+        <input type="submit" name="connection" value="Connection"/>
       </form>
       </div>
       <br/>
