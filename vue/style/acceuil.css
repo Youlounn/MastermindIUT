@@ -1,0 +1,37 @@
+body{
+  text-align: center;
+  background-color: #ECECEA;
+  background-size: 100%;
+  font-family: 'Open Sans', sans;
+}
+
+header {
+  background-color : #191919;
+  width : 100%;
+  left : 0px;
+  top : 0px;
+  display : block;
+  position : absolute;
+  height : auto;
+}
+
+header .title {
+  padding-left : 2%;
+  text-align: left;
+  color : #e5e5e5;
+}
+
+.form input[type=text], input[type=password] {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.form input[type=text], input[type=password]:hover {
+    border: 2px solid #555;
+}
+
+.erreur {
+  background-color: red;
+}

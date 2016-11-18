@@ -6,16 +6,26 @@ class VueConnection{
     header("Content-type: text/html; charset=utf-8");
     ?>
     <html>
+    <head>
+      <style>
+        <?php include 'style/acceuil.css'; ?>
+      </style>
+    </head>
     <body>
+      <header>
+        <p class="title">Connection</p>
+      </header>
       <h1>Connection</h1>
       <br/>
       <br/>
+      <div class="form">
       <form method="post" action="index.php">
-        Entrer votre pseudo : <input type="text" name="nom"/><br />
-        Entrer votre mot de passe : <input type="password" name="mdp"/><br />
+        <input type="text" name="nom"  placeholder="Pseudo"/><br />
+        <input type="password" name="mdp" placeholder="Mot De Passe"/><br />
         <input type="hidden" name="sendType" value="1">
         <input type="submit" name="connection" value="Envoyer"/>
       </form>
+      </div>
       <br/>
       <br/>
     </body>
@@ -26,9 +36,16 @@ class VueConnection{
     header("Content-type: text/html; charset=utf-8");
     ?>
     <html>
+    <head>
+      <style>
+        <?php include 'style/acceuil.css'; ?>
+      </style>
+    </head>
     <body>
       <h1>Connection</h1>
-      <b>Echec de connection !</b><?php echo " ".$e ;?>
+      <div class="erreur">
+        <b>Echec de connection !</b><?php echo " ".$e ;?>
+      </div>
       <br/>
       <br/>
       <form method="post" action="index.php">
