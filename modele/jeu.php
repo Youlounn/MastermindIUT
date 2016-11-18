@@ -33,6 +33,14 @@ class Jeu{
     $this->tentative = 0;
   }
 
+  /*
+  $test = tableaux correspondant au couleur joué
+
+  return un tableaux de taille 4 et de type int
+    3 -> Le pions n'est pas bien positionné et la couleur n'apparait pas dans le resultat
+    2 -> La couleur apparait mais le pions et mal positionné
+    1 -> le bon est bien placé et bien positionné
+  */
   function joue($test){
     $res = array();
     $this->tentative += 1;
@@ -57,6 +65,10 @@ class Jeu{
     return $res;
   }
 
+  /*
+  $check = tableaux correspondant au int de retour de la fonction joue
+  return vraie si il a gagné, faux sinon
+  */
   function gagne($check){
     $res = false;
     if($check == array(1,1,1,1)){
