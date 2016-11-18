@@ -35,8 +35,8 @@
 
    public function __construct(){
     try{
-        $chaine="mysql:host=localhost;dbname=projetWebServeur";
-        $this->connexion = new PDO($chaine,"root","Parents16b");
+        $chaine="mysql:host=localhost;dbname=Mastermind";
+        $this->connexion = new PDO($chaine,"root","");
        $this->connexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
       }
      catch(PDOException $e){

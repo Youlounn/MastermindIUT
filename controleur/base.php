@@ -3,16 +3,19 @@ session_start();
 require "controleurConnection.php";
 require "controleurJeu.php";
 require __DIR__."/../vue/vueConnection.php";
+require __DIR__."/../vue/vuePartie.php";
 class Base{
 
   private $ctrlConnect;
   private $ctrlJeu;
   private $vueCo;
+  private $vuePart;
 
   function __construct(){
     $this->ctrlConnect = new ControleurConnection();
     $this->ctrlJeu = new ControleurJeu();
     $this->vueCo = new VueConnection();
+    $this->vuePart = new vuePartie();
   }
 
   function lancement(){
@@ -25,7 +28,7 @@ class Base{
         $mdp = $_POST['mdp'];
         if($this->ctrlConnect->connection($nom,$mdp) == "ok"){
           $_SESSION['pseudo'] = $nom;
-          $this->vueCo->reussie();
+          $this->vuePart->acceuil();
         } else {
           $this->vueCo->echec($this->ctrlConnect->connection($nom,$mdp));
         }
@@ -40,7 +43,7 @@ class Base{
       if(!isset($_SESSION['pseudo'])){
         $this->vueCo->acceuil();
       } else {
-        $this->vueCo->reussie();
+        $this->vuePart->acceuil();
       }
     }
   }
