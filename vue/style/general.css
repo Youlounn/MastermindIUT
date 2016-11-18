@@ -1,0 +1,33 @@
+body{
+  text-align: center;
+  background-color: #ECECEC;
+  background-size: 100%;
+  font-family: "Calibri", Times, sans-serif;
+}
+
+h1{
+  color: #887192;
+}
+
+table, tr, td {
+  border: solid 1px black;
+  text-align: center;
+}
+
+td {
+  padding : 5px;
+}
+
+#result {
+  margin: auto;
+}
+#plateau {
+  margin: auto;
+  color: #444444;
+  margin-top: 15px;
+}
+
+#form {
+  margin: auto;
+  margin-top: 15px;
+}
