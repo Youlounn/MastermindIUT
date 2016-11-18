@@ -99,6 +99,19 @@ class VuePartie{
               <td>Tentative pion 4</td>
             </tr>
           </table>
+          <table id="colors">
+            <tr>
+              <td class="a">Couleur 1</td>
+              <td class="b">Couleur 2</td>
+              <td class="c">Couleur 3</td>
+              <td class="d">Couleur 4</td>
+              <td class="e">Couleur 5</td>
+              <td class="f">Couleur 6</td>
+              <td class="g">Couleur 7</td>
+              <td class="h">Couleur 8</td>
+            </tr>
+          </table>
+
           <form method="post" action="index.php">
             <input type="hidden" name="sendType" value="2" />
             <input type="submit" value="Deconnection" />

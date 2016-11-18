@@ -31,3 +31,96 @@ td {
   margin: auto;
   margin-top: 15px;
 }
+
+#colors {
+  margin: auto;
+  margin-top: 15px;
+}
+
+.a {
+  color: black;
+  background-color: blue;
+  transition: ease-in-out 0.3s;
+}
+
+.a:hover {
+  color: black;
+  background-color: #020294;
+}
+
+.b {
+  color: black;
+  background-color: red;
+  transition: ease-in-out 0.3s;
+}
+
+.b:hover {
+  color: black;
+  background-color: #8A0808;
+}
+
+.c {
+  color: black;
+  background-color: green;
+  transition: ease-in-out 0.3s;
+}
+
+.c:hover {
+  color: black;
+  background-color: #0B510B;
+}
+
+.d {
+  color: black;
+  background-color: yellow;
+  transition: ease-in-out 0.3s;
+}
+
+.d:hover {
+  color: black;
+  background-color: #868A08;
+}
+
+.e {
+  color: black;
+  background-color: #FF30FF;
+  transition: ease-in-out 0.3s;
+}
+
+.e:hover {
+  color: black;
+  background-color: #AF20AF;
+}
+
+.f {
+  color: black;
+  background-color: purple;
+  transition: ease-in-out 0.3s;
+}
+
+.f:hover {
+  color: black;
+  background-color: #3B0B24;
+}
+
+.g {
+  color: black;
+  background-color: orange;
+  transition: ease-in-out 0.3s;
+}
+
+.g:hover {
+  color: black;
+  background-color: #DF3A01;
+}
+
+.h {
+  color: white;
+  background-color: black;
+  transition: ease-in-out 0.3s;
+}
+
+.h:hover {
+  color: white;
+  background-color: #1C1C1C;
+}
