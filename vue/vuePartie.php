@@ -99,7 +99,6 @@ class VuePartie{
               <td>Tentative pion 4</td>
             </tr>
           </table>
-          test
           <form method="post" action="index.php">
             <input type="hidden" name="sendType" value="2" />
             <input type="submit" value="Deconnection" />
