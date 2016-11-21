@@ -42,18 +42,24 @@ class VueConnection{
       </style>
     </head>
     <body>
-      <h1>Connection</h1>
+      <header>
+        <div class="page">Erreur de connexion</div>
+        <div class="title">Mastermind</div>
+      </header>
+      <br/>
+      <br/>
       <div class="erreur">
-        <b>Echec de connection !</b><?php echo " ".$e ;?>
+        <b>Erreur ! </b>
+        <?php echo $e ; ?>
       </div>
-      <br/>
-      <br/>
+      <div class="form">
       <form method="post" action="index.php">
-        Entrer votre pseudo : <input type="text" name="nom"/><br />
-        Entrer votre mot de passe : <input type="password" name="mdp"/><br />
+        <input type="text" name="nom"  placeholder="Pseudo"/><br />
+        <input type="password" name="mdp" placeholder="Mot De Passe"/><br />
         <input type="hidden" name="sendType" value="1">
-        <input type="submit" name="connection" value="Envoyer"/>
+        <input type="submit" name="connection" value="Connexion"/>
       </form>
+      </div>
       <br/>
       <br/>
     </body>

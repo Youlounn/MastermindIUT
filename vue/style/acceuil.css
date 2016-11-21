@@ -70,5 +70,15 @@ header .page {
 }
 
 .erreur {
-  background-color: red;
+  background-color: #ff4141;
+  margin : auto;
+  margin-top : 1%;
+  padding : 1%;
+  border : 0px;
+  border-radius : 5px;
+  width :25%;
+}
+
+.erreur:hover {
+  cursor: url(http://cur.cursors-4u.net/nature/nat-2/nat120.cur), progress !important;}
 }
