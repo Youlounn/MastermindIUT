@@ -27,6 +27,7 @@ class VuePartie{
               <td>2</td>
               <td>3</td>
               <td>4</td>
+              <td>result</td>
             </thead>
             <tbody>
               <tr>
@@ -34,60 +35,180 @@ class VuePartie{
                 <td>Essai10</td>
                 <td>Essai10</td>
                 <td>Essai10</td>
+                <td>
+                  <table>
+                    <tr>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                  </table>
+                </td>
               </tr>
               <tr>
                 <td>Essai9</td>
                 <td>Essai9</td>
                 <td>Essai9</td>
                 <td>Essai9</td>
+                <td>
+                  <table>
+                    <tr>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                  </table>
+                </td>
               </tr>
               <tr>
                 <td>Essai8</td>
                 <td>Essai8</td>
                 <td>Essai8</td>
                 <td>Essai8</td>
+                <td>
+                  <table>
+                    <tr>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                  </table>
+                </td>
               </tr>
               <tr>
                 <td>Essai7</td>
                 <td>Essai7</td>
                 <td>Essai7</td>
                 <td>Essai7</td>
+                <td>
+                  <table>
+                    <tr>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                  </table>
+                </td>
               </tr>
               <tr>
                 <td>Essai6</td>
                 <td>Essai6</td>
                 <td>Essai6</td>
                 <td>Essai6</td>
+                <td>
+                  <table>
+                    <tr>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                  </table>
+                </td>
               </tr>
               <tr>
                 <td>Essai5</td>
                 <td>Essai5</td>
                 <td>Essai5</td>
                 <td>Essai5</td>
+                <td>
+                  <table>
+                    <tr>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                  </table>
+                </td>
               </tr>
               <tr>
                 <td>Essai4</td>
                 <td>Essai4</td>
                 <td>Essai4</td>
                 <td>Essai4</td>
+                <td>
+                  <table>
+                    <tr>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                  </table>
+                </td>
               </tr>
               <tr>
                 <td>Essai3</td>
                 <td>Essai3</td>
                 <td>Essai3</td>
                 <td>Essai3</td>
+                <td>
+                  <table>
+                    <tr>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                  </table>
+                </td>
               </tr>
               <tr>
                 <td>Essai2</td>
                 <td>Essai2</td>
                 <td>Essai2</td>
                 <td>Essai2</td>
+                <td>
+                  <table>
+                    <tr>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                  </table>
+                </td>
               </tr>
               <tr>
                 <td>Essai1</td>
                 <td>Essai1</td>
                 <td>Essai1</td>
                 <td>Essai1</td>
+                <td>
+                  <table>
+                    <tr>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                  </table>
+                </td>
               </tr>
             </tbody>
           </table>
