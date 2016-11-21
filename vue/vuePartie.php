@@ -218,6 +218,7 @@ class VuePartie{
               <td>Tentative pion 2</td>
               <td>Tentative pion 3</td>
               <td>Tentative pion 4</td>
+              <td><input type="button" value="Valider" /></td>
             </tr>
           </table>
           <table id="colors">
