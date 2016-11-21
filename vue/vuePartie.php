@@ -218,7 +218,10 @@ class VuePartie{
               <td>Tentative pion 2</td>
               <td>Tentative pion 3</td>
               <td>Tentative pion 4</td>
-              <td><input type="button" value="Valider" /></td>
+              <td><form method="POST" action="index.php">
+                <input type="hidden" name="sendType" value="5"  />
+                <input type="button" value="Valider" />
+              </form></td>
             </tr>
           </table>
           <table id="colors">

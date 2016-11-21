@@ -78,7 +78,3 @@ header .page {
   border-radius : 5px;
   width :25%;
 }
-
-.erreur:hover {
-  cursor: url(http://cur.cursors-4u.net/others/oth-2/oth133.cur), progress !important;  
-}
