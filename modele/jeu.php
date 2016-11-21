@@ -36,14 +36,16 @@ class Jeu{
   function joue($test){
     $res = array();
     $this->tentative += 1;
+    $cpt = 0;
     foreach($test as $i){
-      if($i == $this->solution[0]){
+      if($i == $this->solution[$cpt]){
         $verif = 1;
       } else if (in_array($i, $this->solution)){
         $verif = 2;
       } else {
         $verif = 3;
       }
+      $cpy ++ ;
       array_push($res, $verif);
     }
     return $res;
@@ -55,6 +57,10 @@ class Jeu{
       $res = true;
     }
     return $res;
+  }
+
+  function getTentative(){
+    return $this->tentative;
   }
 
   function gagne($check){
