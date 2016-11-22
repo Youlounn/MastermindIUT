@@ -206,3 +206,12 @@ td {
   color: white;
   background-color: #DDDDDD;
 }
+
+#deco{
+  border:none;
+  padding: 5px;
+	box-shadow:3px 3px 12px #999;
+	background:#fff;
+  font-family: 'Open sans', sans-serif;
+	color:#555;
+}
