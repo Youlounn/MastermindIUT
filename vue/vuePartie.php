@@ -276,6 +276,7 @@ class VuePartie{
           </table>
           <table id="plateau">
             <thead>
+              <td>Essaie</td>
               <td>1</td>
               <td>2</td>
               <td>3</td>
@@ -287,6 +288,8 @@ class VuePartie{
                 <?php
               $cpt = 0;
               while($cpt < $tentative){
+                $tmp = $cpt +1;
+                echo "<td>N°".$tmp."</td>";
                 foreach($partie[$cpt] as $essai){
                   if($essai == 0){
                     ?> <td class='h'></td> <?php
