@@ -10,7 +10,12 @@ class VuePartie{
       <style>
         <?php include 'style/general.css'; ?>
       </style>
+    </head>
     <body>
+      <header>
+        <div class="page">Jeu</div>
+        <div class="title">Mastermind</div>
+      </header>
       <h1>Bonne chance !</h1>
       <div id="jeu">
           <table id="result">
@@ -38,12 +43,12 @@ class VuePartie{
                 <td>
                   <table>
                     <tr>
-                      <td>1</td>
-                      <td>2</td>
+                      <td></td>
+                      <td></td>
                     </tr>
                     <tr>
-                      <td>1</td>
-                      <td>2</td>
+                      <td></td>
+                      <td></td>
                     </tr>
                   </table>
                 </td>
@@ -56,12 +61,12 @@ class VuePartie{
                 <td>
                   <table>
                     <tr>
-                      <td>1</td>
-                      <td>2</td>
+                      <td></td>
+                      <td></td>
                     </tr>
                     <tr>
-                      <td>1</td>
-                      <td>2</td>
+                      <td></td>
+                      <td></td>
                     </tr>
                   </table>
                 </td>
@@ -74,12 +79,12 @@ class VuePartie{
                 <td>
                   <table>
                     <tr>
-                      <td>1</td>
-                      <td>2</td>
+                      <td></td>
+                      <td></td>
                     </tr>
                     <tr>
-                      <td>1</td>
-                      <td>2</td>
+                      <td></td>
+                      <td></td>
                     </tr>
                   </table>
                 </td>
@@ -92,12 +97,12 @@ class VuePartie{
                 <td>
                   <table>
                     <tr>
-                      <td>1</td>
-                      <td>2</td>
+                      <td></td>
+                      <td></td>
                     </tr>
                     <tr>
-                      <td>1</td>
-                      <td>2</td>
+                      <td></td>
+                      <td></td>
                     </tr>
                   </table>
                 </td>
@@ -110,12 +115,12 @@ class VuePartie{
                 <td>
                   <table>
                     <tr>
-                      <td>1</td>
-                      <td>2</td>
+                      <td></td>
+                      <td></td>
                     </tr>
                     <tr>
-                      <td>1</td>
-                      <td>2</td>
+                      <td></td>
+                      <td></td>
                     </tr>
                   </table>
                 </td>
@@ -128,12 +133,12 @@ class VuePartie{
                 <td>
                   <table>
                     <tr>
-                      <td>1</td>
-                      <td>2</td>
+                      <td></td>
+                      <td></td>
                     </tr>
                     <tr>
-                      <td>1</td>
-                      <td>2</td>
+                      <td></td>
+                      <td></td>
                     </tr>
                   </table>
                 </td>
@@ -146,12 +151,12 @@ class VuePartie{
                 <td>
                   <table>
                     <tr>
-                      <td>1</td>
-                      <td>2</td>
+                      <td></td>
+                      <td></td>
                     </tr>
                     <tr>
-                      <td>1</td>
-                      <td>2</td>
+                      <td></td>
+                      <td></td>
                     </tr>
                   </table>
                 </td>
@@ -164,12 +169,12 @@ class VuePartie{
                 <td>
                   <table>
                     <tr>
-                      <td>1</td>
-                      <td>2</td>
+                      <td></td>
+                      <td></td>
                     </tr>
                     <tr>
-                      <td>1</td>
-                      <td>2</td>
+                      <td></td>
+                      <td></td>
                     </tr>
                   </table>
                 </td>
@@ -182,12 +187,12 @@ class VuePartie{
                 <td>
                   <table>
                     <tr>
-                      <td>1</td>
-                      <td>2</td>
+                      <td></td>
+                      <td></td>
                     </tr>
                     <tr>
-                      <td>1</td>
-                      <td>2</td>
+                      <td></td>
+                      <td></td>
                     </tr>
                   </table>
                 </td>
@@ -200,12 +205,12 @@ class VuePartie{
                 <td>
                   <table>
                     <tr>
-                      <td>1</td>
-                      <td>2</td>
+                      <td></td>
+                      <td></td>
                     </tr>
                     <tr>
-                      <td>1</td>
-                      <td>2</td>
+                      <td></td>
+                      <td></td>
                     </tr>
                   </table>
                 </td>
@@ -214,10 +219,10 @@ class VuePartie{
           </table>
           <table id="form">
             <tr>
-              <td>Tentative pion 1</td>
-              <td>Tentative pion 2</td>
-              <td>Tentative pion 3</td>
-              <td>Tentative pion 4</td>
+              <td><input type="button" name="valider1" value="Tentative pion 1"/></td>
+              <td><input type="button" name="valider2" value="Tentative pion 2"/></td>
+              <td><input type="button" name="valider3" value="Tentative pion 3"/></td>
+              <td><input type="button" name="valider4" value="Tentative pion 4"/></td>
               <td><form method="POST" action="index.php">
                 <input type="hidden" name="sendType" value="5"  />
                 <input type="button" value="Valider" />
