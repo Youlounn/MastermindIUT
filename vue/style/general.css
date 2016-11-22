@@ -67,18 +67,18 @@ td {
   text-align: center;
 }
 
-
 #plateau table td{
   border: solid 1px #ECECEC;
   border-radius: 5px;
 }
 
-#plateau table td .black{
+#plateau td .black{
   background-color: black;
 }
 
-#plateau table td .white{
+#plateau td .white{
   background-color: white;
+  border: red;
 }
 
 
