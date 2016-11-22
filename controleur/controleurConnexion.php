@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__."/../modele/bd.php";
-require_once __DIR__."/../vue/vueConnection.php";
-class ControleurConnection{
+require_once __DIR__."/../vue/vueConnexion.php";
+class ControleurConnexion{
 
   private $bd;
   private $vueCo;
