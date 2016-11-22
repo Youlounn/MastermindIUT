@@ -208,6 +208,7 @@ td {
 }
 
 #deco{
+<<<<<<< HEAD
   width: 20%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -227,4 +228,12 @@ td {
   border: 0px;
   color : white;
   background-color: #BB5555;
+=======
+  border:none;
+  padding: 5px;
+	box-shadow:3px 3px 12px #999;
+	background:#fff;
+  font-family: 'Open sans', sans-serif;
+	color:#555;
+>>>>>>> origin/master
 }
