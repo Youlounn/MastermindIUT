@@ -7,7 +7,7 @@ class ControleurConnexion{
   private $vueCo;
 
   function __construct(){
-    $this->vueCo = new VueConnection();
+    $this->vueCo = new VueConnexion();
     try {
       $this->bd = new Bd();
     } catch (MonException $e){
@@ -15,8 +15,8 @@ class ControleurConnexion{
     }
   }
 
-  //Connection
-  function connection($nom,$mdp){
+  //Connexion
+  function connexion($nom,$mdp){
     $ret = false;
     try {
       $passBDD = $this->bd->getMdp($nom);

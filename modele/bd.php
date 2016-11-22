@@ -36,11 +36,11 @@
    public function __construct(){
     try{
         $chaine="mysql:host=localhost;dbname=projetWebServeur";
-        $this->connexion = new PDO($chaine,"root","Parents16b");
+        $this->connexion = new PDO($chaine,"root","");
        $this->connexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
       }
      catch(PDOException $e){
-       $exception=new ConnexionException("problème de connection à la base");
+       $exception=new ConnexionException("problème de connexion à la base");
        throw $exception;
      }
    }

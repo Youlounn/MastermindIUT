@@ -110,7 +110,7 @@ class VuePartie{
 
         <form method="post" action="index.php">
           <input type="hidden" name="sendType" value="2" />
-          <input id="deco" type="submit" value="Deconnection" />
+          <input id="deco" type="submit" value="Deconnexion" />
         </form>
         <div>
         </body>
@@ -226,7 +226,7 @@ class VuePartie{
 
             <form method="post" action="index.php">
               <input type="hidden" name="sendType" value="2" />
-              <input id="deco" type="submit" value="Deconnection" />
+              <input id="deco" type="submit" value="Deconnexion" />
             </form>
 
             <div>
