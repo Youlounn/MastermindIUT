@@ -63,6 +63,7 @@ class VuePartie{
                 }
 
                 ?> <td><table><tr> <?php
+                asort($result[$cpt]);
                 foreach($result[$cpt] as $res){
                   if($res == 1){
                     ?> <td class='black'></td> <?php

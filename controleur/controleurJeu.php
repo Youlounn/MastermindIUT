@@ -20,8 +20,17 @@ class ControleurJeu {
 
   function jeu($p1, $p2, $p3, $p4){
     $send = array($p1, $p2, $p3, $p4);
-    $_SESSION['jeu']->joue($send);
-    $this->vuePart->acceuil($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative());
+    $test = $_SESSION['jeu']->joue($send);
+    if($_SESSION['jeu']->gagne($test) == false){
+      if($_SESSION['jeu']->getTentative() <= 10){
+        $this->vuePart->acceuil($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative());
+        var_dump($_SESSION['jeu']->getRes());
+      } else {
+        echo "Trop de tentative";
+      }
+    } else {
+      echo "Ta gagné PD";
+    }
   }
 
   function affichage(){
