@@ -22,7 +22,10 @@ class ControleurJeu {
     $send = array($p1, $p2, $p3, $p4);
     var_dump($_SESSION['jeu']->joue($send));
     var_dump($_SESSION['jeu']->getRes());
-    $this->vuePart->acceuil();
+    var_dump($_SESSION['jeu']->getTentative());
+    var_dump($_SESSION['jeu']->getResPartie());
+    var_dump($_SESSION['jeu']->getJeux());
+    $this->vuePart->acceuilBis($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative());
   }
 
   function affichage(){

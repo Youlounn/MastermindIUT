@@ -27,7 +27,7 @@ class Jeu{
   private $tentative;
   private $solution;
   private $historyGame;
-  private $historyRes;
+  private $historyRe;
 
   function __construct(){
     $this->solution = array(rand(0,7), rand(0,7), rand(0,7), rand(0,7));
@@ -38,8 +38,6 @@ class Jeu{
 
   function joue($test){
     $res = array();
-    $this->historyGame[$this->tentative] = $test;
-    $this->tentative += 1;
     $cpt = 0;
     foreach($test as $i){
       if($i == $this->solution[$cpt]){
@@ -53,6 +51,8 @@ class Jeu{
       array_push($res, $verif);
     }
     $this->historyRes[$this->tentative] = $res;
+    $this->historyGame[$this->tentative] = $test;
+    $this->tentative += 1;
     return $res;
   }
 

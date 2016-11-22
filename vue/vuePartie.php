@@ -283,44 +283,44 @@ class VuePartie{
               <td>result</td>
             </thead>
             <tbody>
-              <?php
+              <tr>
+                <?php
               $cpt = 0;
-              echo "<tr>";
-              while($cpt <= $tentative){
+              while($cpt < $tentative){
                 foreach($partie[$cpt] as $essai){
                   if($essai == 0){
-                    echo "<td class='h'></td>";
+                    ?> <td class='h'></td> <?php
                   } else if($essai == 1){
-                    echo "<td class='a'></td>";
+                    ?> <td class='a'></td> <?php
                   } else if($essai == 2){
-                    echo "<td class='d'></td>";
+                    ?> <td class='d'></td> <?php
                   } else if($essai == 3){
-                    echo "<td class='c'></td>";
+                    ?> <td class='c'></td> <?php
                   } else if($essai == 4){
-                    echo "<td class='b'></td>";
+                    ?> <td class='b'></td> <?php
                   } else if($essai == 5){
-                    echo "<td class='g'></td>";
+                    ?> <td class='g'></td> <?php
                   } else if($essai == 6){
-                    echo "<td class='f'></td>";
+                    ?> <td class='f'></td> <?php
                   } else if($essai == 7){
-                    echo "<td class='e'></td>";
+                    ?> <td class='e'></td> <?php
                   }
                 }
 
-                echo "<td><table><tr>";
+                ?> <td><table><tr> <?php
                 foreach($result[$cpt] as $res){
                   if($res == 1){
-                    echo "<td class='black'></td>";
+                    ?> <td class='black'></td> <?php
                   } else if($res == 2){
-                    echo "<td class='white'></td>";
+                    ?> <td class='white'></td> <?php
                   } else {
-                    echo "<td></td>";
+                    ?> <td></td> <?php
                   }
                 }
+                ?> </tr></table></td></tr> <?php
 
                 $cpt ++;
               }
-              echo "</td></table></tr>";
 
               ?>
             </tbody>
@@ -328,10 +328,10 @@ class VuePartie{
           <table id="form">
             <form method="POST" action="index.php">
             <tr>
-              <td><input type="button" name="pion1" value="0"/></td>
-              <td><input type="button" name="pion2" value="1"/></td>
-              <td><input type="button" name="pion3" value="2"/></td>
-              <td><input type="button" name="pion4" value="3"/></td>
+              <td><input type="number" name="pion1" value="0"/></td>
+              <td><input type="number" name="pion2" value="1"/></td>
+              <td><input type="number" name="pion3" value="2"/></td>
+              <td><input type="number" name="pion4" value="3"/></td>
               <td>
                 <input type="hidden" name="sendType" value="4"  />
                 <input type="submit" value="Valider" />
