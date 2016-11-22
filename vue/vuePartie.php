@@ -254,4 +254,118 @@ class VuePartie{
     <?php
   }
 
+  function acceuilBis($partie, $result, $tentative){
+    header("Content-type: text/html; charset=utf-8");
+    ?>
+    <html>
+    <head>
+      <style>
+        <?php include 'style/general.css'; ?>
+      </style>
+    </head>
+    <body>
+      <header>
+        <div class="page">Jeu</div>
+        <div class="title">Mastermind</div>
+      </header>
+    </br>
+    </br>
+    </br>
+    </br>
+      <div id="jeu">
+          <table id="result">
+            <tr>
+              <td>Pion à trouver 1</td>
+              <td>Pion à trouver 2</td>
+              <td>Pion à trouver 3</td>
+              <td>Pion à trouver 4</td>
+            </tr>
+          </table>
+          <table id="plateau">
+            <thead>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>result</td>
+            </thead>
+            <tbody>
+              <?php
+              $cpt = 0;
+              echo "<tr>";
+              while($cpt <= $tentative){
+                foreach($partie[$cpt] as $essai){
+                  if($essai == 0){
+                    echo "<td class='h'></td>";
+                  } else if($essai == 1){
+                    echo "<td class='a'></td>";
+                  } else if($essai == 2){
+                    echo "<td class='d'></td>";
+                  } else if($essai == 3){
+                    echo "<td class='c'></td>";
+                  } else if($essai == 4){
+                    echo "<td class='b'></td>";
+                  } else if($essai == 5){
+                    echo "<td class='g'></td>";
+                  } else if($essai == 6){
+                    echo "<td class='f'></td>";
+                  } else if($essai == 7){
+                    echo "<td class='e'></td>";
+                  }
+                }
+
+                echo "<td><table><tr>";
+                foreach($result[$cpt] as $res){
+                  if($res == 1){
+                    echo "<td class='black'></td>";
+                  } else if($res == 2){
+                    echo "<td class='white'></td>";
+                  } else {
+                    echo "<td></td>";
+                  }
+                }
+
+                $cpt ++;
+              }
+              echo "</td></table></tr>";
+
+              ?>
+            </tbody>
+          </table>
+          <table id="form">
+            <form method="POST" action="index.php">
+            <tr>
+              <td><input type="button" name="valider1" value="Tentative pion 1"/></td>
+              <td><input type="button" name="valider2" value="Tentative pion 2"/></td>
+              <td><input type="button" name="valider3" value="Tentative pion 3"/></td>
+              <td><input type="button" name="valider4" value="Tentative pion 4"/></td>
+              <td>
+                <input type="hidden" name="sendType" value="3"  />
+                <input type="button" value="Valider" />
+              </td>
+            </tr>
+            </form>
+          </table>
+          <table id="colors">
+            <tr>
+              <td class="a"></td>
+              <td class="b"></td>
+              <td class="c"></td>
+              <td class="d"></td>
+              <td class="e"></td>
+              <td class="f"></td>
+              <td class="g"></td>
+              <td class="h"></td>
+            </tr>
+          </table>
+
+          <form method="post" action="index.php">
+            <input type="hidden" name="sendType" value="2" />
+            <input type="submit" value="Deconnection" />
+          </form>
+      <div>
+    </body>
+    <?php
+  }
+
 }
