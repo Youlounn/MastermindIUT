@@ -15,6 +15,10 @@ header {
   height : auto;
 }
 
+#jeu {
+  height: 100%;
+}
+
 header .title {
   margin-top : 1%;
   margin-bottom: 1%;
@@ -37,11 +41,6 @@ h1{
   color: #887192;
 }
 
-tr, td {
-  border: solid 1px black;
-  text-align: center;
-}
-
 td {
   padding : 5px;
 }
@@ -49,33 +48,57 @@ td {
 #result {
   margin: auto;
 }
+
+#result{
+  background-color: #111111;
+  color: black;
+}
 #plateau {
   margin: auto;
   color: #444444;
   margin-top: 15px;
+  text-align: center;
+}
+
+#plateau td {
+  border: solid 1px black;
+  text-align: center;
 }
 
 #form {
   margin: auto;
   margin-top: 15px;
+  width: 40%;
+  height: 6%;
+  border: solid 1px black;
+  text-align: center;
 }
 
 #colors {
   margin: auto;
   margin-top: 15px;
+  width: 25%;
+  height: 5%;
 }
 
-#form tr td:hover {
-  border: 3px solid red;
+#colors tr td {
+  border: 1px #ECECEC solid ;
+  border-radius: 15px;
 }
+
 
 #form input[type=button], #form form input[type=button]{
   width: 100%;
   height: 100%;
+  border: 0px solid #ECECEC;
+  background-color: #ECECEC;
 }
 
 #form input[type=button]:focus{
   background-color: red;
+
+  border: 0px solid red;
+  background-color: #ECECEC;
 }
 
 .a {

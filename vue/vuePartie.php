@@ -16,7 +16,10 @@ class VuePartie{
         <div class="page">Jeu</div>
         <div class="title">Mastermind</div>
       </header>
-      <h1>Bonne chance !</h1>
+    </br>
+    </br>
+    </br>
+    </br>
       <div id="jeu">
           <table id="result">
             <tr>
@@ -231,14 +234,14 @@ class VuePartie{
           </table>
           <table id="colors">
             <tr>
-              <td class="a">Couleur 1</td>
-              <td class="b">Couleur 2</td>
-              <td class="c">Couleur 3</td>
-              <td class="d">Couleur 4</td>
-              <td class="e">Couleur 5</td>
-              <td class="f">Couleur 6</td>
-              <td class="g">Couleur 7</td>
-              <td class="h">Couleur 8</td>
+              <td class="a"></td>
+              <td class="b"></td>
+              <td class="c"></td>
+              <td class="d"></td>
+              <td class="e"></td>
+              <td class="f"></td>
+              <td class="g"></td>
+              <td class="h"></td>
             </tr>
           </table>
 
