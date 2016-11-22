@@ -320,3 +320,7 @@ td {
     border-radius : 5px;
     width :25%;
 }
+
+#tutoriel {
+  display : table;
+}

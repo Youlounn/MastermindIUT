@@ -39,11 +39,19 @@ class Jeu{
   function joue($test){
     $res = array();
     $cpt = 0;
+    $bloqued = array();
+    $tmp = $this->solution;
     foreach($test as $i){
-      if($i == $this->solution[$cpt]){
+      if($i == $tmp[$cpt]){
         $verif = 1;
-      } else if (in_array($i, $this->solution)){
-        $verif = 2;
+        $tmp[$cpt] = -1;
+      } else if (in_array($i, $tmp)){
+        if(in_array($i, $bloqued)){
+          $verif = 3;
+        } else {
+          $verif = 2;
+          array_push($bloqued, $i);
+        }
       } else {
         $verif = 3;
       }

@@ -82,12 +82,13 @@ class VuePartie{
           </tbody>
         </table>
         <table id="form">
+          <caption>Séléction</caption>
           <form method="POST" action="index.php">
             <tr>
-              <td><input class="hide" onClick="colorClickEvol()" type="number" min="0" max="7" name="pion1" value="1"/><p class="edit">0</p></td>
-              <td><input class="hide" onClick="colorClickEvol()" type="number" min="0" max="7" name="pion2" value="1"/><p class="edit">0</p></td>
-              <td><input class="hide" onClick="colorClickEvol()" type="number" min="0" max="7" name="pion3" value="1"/><p class="edit">0</p></td>
-              <td><input class="hide" onClick="colorClickEvol()" type="number" min="0" max="7" name="pion4" value="1"/><p class="edit">0</p></td>
+              <td><input class="hide" onDblclick="colorClickDel('pion1')" onChange="colorClickEvol('pion1')" type="number" min="0" max="7" id="pion1" name="pion1" value="1"/><p class="edit">0</p></td>
+              <td><input class="hide" onDblclick="colorClickDel('pion2')" onChange="colorClickEvol('pion2')" type="number" min="0" max="7" id="pion2" name="pion2" value="1"/><p class="edit">0</p></td>
+              <td><input class="hide" onDblclick="colorClickDel('pion3')" onChange="colorClickEvol('pion3')" type="number" min="0" max="7" id="pion3" name="pion3" value="1"/><p class="edit">0</p></td>
+              <td><input class="hide" onDblclick="colorClickDel('pion4')" onChange="colorClickEvol('pion4')" type="number" min="0" max="7" id="pion4" name="pion4" value="1"/><p class="edit">0</p></td>
               <td>
                 <input type="hidden" name="sendType" value="4"  />
                 <input type="submit" value="Valider" />
@@ -97,17 +98,24 @@ class VuePartie{
         </table>
         <table id="colors">
           <tr>
-            <td class="h">0</td>
-            <td class="a">1</td>
-            <td class="d">2</td>
-            <td class="c">3</td>
-            <td class="b">4</td>
-            <td class="g">5</td>
-            <td class="f">6</td>
-            <td class="e">7</td>
+            <td class="h" onClick="colorClickPicker('h')">0</td>
+            <td class="a" onClick="colorClickPicker('a')">1</td>
+            <td class="d" onClick="colorClickPicker('d')">2</td>
+            <td class="c" onClick="colorClickPicker('c')">3</td>
+            <td class="b" onClick="colorClickPicker('b')">4</td>
+            <td class="g" onClick="colorClickPicker('g')">5</td>
+            <td class="f" onClick="colorClickPicker('f')">6</td>
+            <td class="e" onClick="colorClickPicker('e')">7</td>
           </tr>
         </table>
 
+        <table id="tutoriel">
+          <tr>
+            <td>Cliqué sur une couleur pour l'ajouté a une case</td>
+            <td>Entré un nombre entre 0 et 7 dans une case pour lui ajouté une couleur</td>
+            <td>Double cliqué sur une case qui possede une couleur pour lui enlevé</td>
+          </tr>
+        </table>
         <form method="post" action="index.php">
           <input type="hidden" name="sendType" value="2" />
           <input id="deco" type="submit" value="Deconnexion" />
@@ -115,8 +123,34 @@ class VuePartie{
         <div>
         </body>
         <script>
-        function colorClickEvol(){
-          alert("test");
+        function colorClickDel(nom){
+          var couleurBox = document.getElementById(nom);
+          couleurBox.className = "hide";
+          couleurBox.parentNode.children[1].innerHTML = 0;
+        }
+
+        function colorClickEvol(nom){
+          var couleurBox = document.getElementById(nom);
+            if(couleurBox.value == 0){
+              couleurBox.className = "h";
+            } else if(couleurBox.value == 1){
+              couleurBox.className = "a";
+            } else if(couleurBox.value == 2){
+              couleurBox.className = "d";
+            } else if(couleurBox.value == 3){
+              couleurBox.className = "c";
+            } else if(couleurBox.value == 4){
+              couleurBox.className = "b";
+            } else if(couleurBox.value == 5){
+              couleurBox.className = "g";
+            } else if(couleurBox.value == 6){
+              couleurBox.className = "f";
+            } else if(couleurBox.value == 7){
+              couleurBox.className = "e";
+            }
+            if(couleurBox.parentNode.children[1].innerHTML == 0){
+              couleurBox.parentNode.children[1].innerHTML = 1;
+            }
         }
         </script>
         <?php
