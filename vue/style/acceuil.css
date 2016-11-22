@@ -78,3 +78,14 @@ header .page {
   border-radius : 5px;
   width :25%;
 }
+
+.info {
+  background-color: #16dc88;
+  margin : auto;
+  font-size: 14px;
+  margin-top : 1%;
+  padding : 1%;
+  border : 0px;
+  border-radius : 5px;
+  width :25%;
+}
