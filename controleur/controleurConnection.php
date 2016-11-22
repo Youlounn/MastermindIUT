@@ -1,18 +1,18 @@
 <?php
-require __DIR__."/../modele/bd.php";
-require __DIR__."/../vue/vueConnection.php";
+require_once __DIR__."/../modele/bd.php";
+require_once __DIR__."/../vue/vueConnection.php";
 class ControleurConnection{
 
   private $bd;
   private $vueCo;
 
   function __construct(){
+    $this->vueCo = new VueConnection();
     try {
       $this->bd = new Bd();
     } catch (MonException $e){
-      return $e->afficher();
+      $this->vueCo->echec($e->afficher());
     }
-    $this->vueCo = new VueConnection();
   }
 
   //Connection

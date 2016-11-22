@@ -30,6 +30,8 @@ class Base{
         $this->ctrlJeu->affichage();
       } else if($sd == 4) { //Si les formulaire est le 4eme (envoi d'une partie)
         $this->ctrlJeu->jeu($_POST['pion1'], $_POST['pion2'], $_POST['pion3'], $_POST['pion4']);
+      } else if($sd == 5){ //Si le formulaire est le 5eme (rejoué)
+        $this->ctrlJeu->newGame();        
       }
     } else { //Si aucun formulaire n'est renseigné
       if(!isset($_SESSION['pseudo'])){ //Si l'utilisateur n'existe pas

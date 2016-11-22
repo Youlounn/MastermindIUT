@@ -52,8 +52,8 @@ class VueConnection{
       </div>
       <div class="form">
       <form method="post" action="index.php">
-        <input type="text" name="nom"  placeholder="Pseudo"/><br />
-        <input type="password" name="mdp" placeholder="Mot De Passe"/><br />
+        <input type="text" name="nom"  placeholder="Pseudo"required><br />
+        <input type="password" name="mdp" placeholder="Mot De Passe" required><br />
         <input type="hidden" name="sendType" value="1">
         <input type="submit" name="connection" value="Connexion"/>
       </form>
