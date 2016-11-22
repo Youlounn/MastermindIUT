@@ -99,7 +99,6 @@ td {
 
 #colors td {
   border-radius: 15px;
-  color: #ECECEC;
   text-align: center;
   font-weight: bold;
 }
@@ -133,7 +132,6 @@ td {
   margin: 8px 0;
   border: 0px;
   border-radius : 5px;
-  color : white;
   font-size: 100%;
   font-weight: bold;
   transition: .3s;
@@ -147,79 +145,79 @@ td {
 }
 
 .a {
-  color: black;
+  color: blue;
   background-color: blue;
   transition: ease-in-out 0.3s;
 }
 
 .a:hover {
-  color: black;
+  color: #020294;
   background-color: #020294;
 }
 
 .b {
-  color: black;
+  color: red;
   background-color: red;
   transition: ease-in-out 0.3s;
 }
 
 .b:hover {
-  color: black;
+  color: #8A0808;
   background-color: #8A0808;
 }
 
 .c {
-  color: black;
+  color: green;
   background-color: green;
   transition: ease-in-out 0.3s;
 }
 
 .c:hover {
-  color: black;
+  color: #0B510B;
   background-color: #0B510B;
 }
 
 .d {
-  color: black;
+  color: yellow;
   background-color: yellow;
   transition: ease-in-out 0.3s;
 }
 
 .d:hover {
-  color: black;
+  color: #868A08;
   background-color: #868A08;
 }
 
 .e {
-  color: black;
+  color: #FF30FF;
   background-color: #FF30FF;
   transition: ease-in-out 0.3s;
 }
 
 .e:hover {
-  color: black;
+  color: #AF20AF;
   background-color: #AF20AF;
 }
 
 .f {
-  color: black;
+  color: purple;
   background-color: purple;
   transition: ease-in-out 0.3s;
 }
 
 .f:hover {
-  color: black;
-  background-color: #3B0B24;
+  color: #590059;
+  background-color: #590059;
 }
 
 .g {
-  color: black;
+  color: orange;
   background-color: orange;
   transition: ease-in-out 0.3s;
 }
 
 .g:hover {
-  color: black;
+  color: #DF3A01;
   background-color: #DF3A01;
 }
 
@@ -231,15 +229,17 @@ td {
 
 .h:hover {
   color: white;
-  background-color: #DDDDDD;
+  background-color: white;
 }
 
 .hide {
+  color : #d2d5e0;
   background-color: #d2d5e0;
   transition: ease-in-out 0.3s;
 }
 
 .hide:hover {
+  color : #93959c;
   background-color: #93959c;
 }
 

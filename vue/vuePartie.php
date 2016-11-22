@@ -98,14 +98,14 @@ class VuePartie{
         </table>
         <table id="colors">
           <tr>
-            <td class="h" onClick="colorClickPicker('h')">0</td>
-            <td class="a" onClick="colorClickPicker('a')">1</td>
-            <td class="d" onClick="colorClickPicker('d')">2</td>
-            <td class="c" onClick="colorClickPicker('c')">3</td>
-            <td class="b" onClick="colorClickPicker('b')">4</td>
-            <td class="g" onClick="colorClickPicker('g')">5</td>
-            <td class="f" onClick="colorClickPicker('f')">6</td>
-            <td class="e" onClick="colorClickPicker('e')">7</td>
+            <td class="h" onClick="colorClickPicker('h',0)">0</td>
+            <td class="a" onClick="colorClickPicker('a',1)">1</td>
+            <td class="d" onClick="colorClickPicker('d',2)">2</td>
+            <td class="c" onClick="colorClickPicker('c',3)">3</td>
+            <td class="b" onClick="colorClickPicker('b',4)">4</td>
+            <td class="g" onClick="colorClickPicker('g',5)">5</td>
+            <td class="f" onClick="colorClickPicker('f',6)">6</td>
+            <td class="e" onClick="colorClickPicker('e',7)">7</td>
           </tr>
         </table>
 
@@ -151,6 +151,24 @@ class VuePartie{
             if(couleurBox.parentNode.children[1].innerHTML == 0){
               couleurBox.parentNode.children[1].innerHTML = 1;
             }
+        }
+
+        function colorClickPicker(nomClass, valueClass) {
+          var couleurInput = document.getElementById("pion1").parentNode.parentNode;
+          var cpt = 0;
+          while(cpt < 4){
+            if(couleurInput.children[cpt].children[1].className == "edit"){
+              var obj = couleurInput.children[cpt].children[1];
+              if(obj.innerHTML == 0){
+                obj.innerHTML = 1;
+                couleurInput.children[cpt].children[0].value = valueClass;
+                couleurInput.children[cpt].children[0].className = nomClass;
+                cpt = 4;
+                break;
+              }
+            }
+            cpt ++;
+          }
         }
         </script>
         <?php
@@ -260,7 +278,7 @@ class VuePartie{
 
             <form method="post" action="index.php">
               <input type="hidden" name="sendType" value="5" />
-              <input class="info" type="submit" value="Rejoué" />
+              <input class="info" type="submit" value="Rejouer" />
             </form>
 
             <form method="post" action="index.php">

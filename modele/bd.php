@@ -95,8 +95,10 @@
 
  public function ajoutStat($joueur, $gagner, $nbcoups){
    try{
-     $stmt=$this->connexion->prepare("INSERT INTO parties(pseudo,partieGagnee,nombreCoups) VALUE (?,?,?)");
-     $stmt->bind_param($joueur,$gagner,$nbcoups);
+     $stmt=$this->connexion->prepare("INSERT INTO parties(pseudo,partieGagnee,nombreCoups) VALUE (:name,:victoire,:nbr)");
+     $stmt->bindParam(':name', "'".$joueur."'");
+     $stmt->bindParam(':victoire', $gagner);
+     $stmt->bindParam(':nbr', $nbcoups);
      $stmt->execute();
    }
    catch(PDOException $e){
