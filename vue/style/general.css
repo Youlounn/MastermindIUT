@@ -81,8 +81,6 @@ td {
   border: red;
 }
 
-
-
 #form {
   margin: auto;
   margin-top: 15px;
@@ -99,8 +97,7 @@ td {
   height: 5%;
 }
 
-#colors tr td {
-  border: 5px #ECECEC solid ;
+#colors td {
   border-radius: 15px;
   color: #ECECEC;
   text-align: center;
@@ -125,7 +122,6 @@ td {
 }
 
 #form input[type=submit]:hover{
-  cursor: url(http://cur.cursors-4u.net/symbols/sym-1/sym46.cur), auto;
   border: 0px;
   color : white;
   background-color: #1b7a43;
@@ -146,9 +142,8 @@ td {
   -o-transition: .3s;
 }
 
-#form input[type=number]:hover{
-  border: 0px;
-  color : white;
+#form td .edit {
+  display : none;
 }
 
 .a {

@@ -29,12 +29,12 @@ class VuePartie{
       </table>
       <table id="plateau">
         <thead>
-          <td>Essaie</td>
+          <td>Essai</td>
           <td>1</td>
           <td>2</td>
           <td>3</td>
           <td>4</td>
-          <td>result</td>
+          <td>Résultat</td>
         </thead>
         <tbody>
           <tr>
@@ -84,10 +84,10 @@ class VuePartie{
         <table id="form">
           <form method="POST" action="index.php">
             <tr>
-              <td><input class="a" type="number" min="0" max="7" name="pion1" value="1"/></td>
-              <td><input class="a" type="number" min="0" max="7" name="pion2" value="1"/></td>
-              <td><input class="a" type="number" min="0" max="7" name="pion3" value="1"/></td>
-              <td><input class="a" type="number" min="0" max="7" name="pion4" value="1"/></td>
+              <td><input class="hide" onClick="colorClickEvol()" type="number" min="0" max="7" name="pion1" value="1"/><p class="edit">0</p></td>
+              <td><input class="hide" onClick="colorClickEvol()" type="number" min="0" max="7" name="pion2" value="1"/><p class="edit">0</p></td>
+              <td><input class="hide" onClick="colorClickEvol()" type="number" min="0" max="7" name="pion3" value="1"/><p class="edit">0</p></td>
+              <td><input class="hide" onClick="colorClickEvol()" type="number" min="0" max="7" name="pion4" value="1"/><p class="edit">0</p></td>
               <td>
                 <input type="hidden" name="sendType" value="4"  />
                 <input type="submit" value="Valider" />
@@ -114,6 +114,11 @@ class VuePartie{
         </form>
         <div>
         </body>
+        <script>
+        function colorClickEvol(){
+          alert("test");
+        }
+        </script>
         <?php
       }
 
@@ -166,12 +171,12 @@ class VuePartie{
           </table>
           <table id="plateau">
             <thead>
-              <td>Essaie</td>
+              <td>Essai</td>
               <td>1</td>
               <td>2</td>
               <td>3</td>
               <td>4</td>
-              <td>result</td>
+              <td>Résultat</td>
             </thead>
             <tbody>
               <tr>
