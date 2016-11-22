@@ -20,16 +20,12 @@ class ControleurJeu {
 
   function jeu($p1, $p2, $p3, $p4){
     $send = array($p1, $p2, $p3, $p4);
-    var_dump($_SESSION['jeu']->joue($send));
-    var_dump($_SESSION['jeu']->getRes());
-    var_dump($_SESSION['jeu']->getTentative());
-    var_dump($_SESSION['jeu']->getResPartie());
-    var_dump($_SESSION['jeu']->getJeux());
-    $this->vuePart->acceuilBis($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative());
+    $_SESSION['jeu']->joue($send);
+    $this->vuePart->acceuil($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative());
   }
 
   function affichage(){
     //$this->jeu->getRes();
-    $this->vuePart->acceuil();
+    $this->vuePart->acceuil(0,0,0);
   }
 }

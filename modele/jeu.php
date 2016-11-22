@@ -27,7 +27,7 @@ class Jeu{
   private $tentative;
   private $solution;
   private $historyGame;
-  private $historyRe;
+  private $historyRes;
 
   function __construct(){
     $this->solution = array(rand(0,7), rand(0,7), rand(0,7), rand(0,7));

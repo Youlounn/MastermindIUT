@@ -28,7 +28,7 @@ class ControleurConnection{
           $this->vueCo->echec("Erreur dans pseudo ou mot de passe");
       }
     } catch (MonException $e) {
-      $this->vueCo->echec("$e->afficher()");
+      $this->vueCo->echec($e->afficher());
     }
   }
 
