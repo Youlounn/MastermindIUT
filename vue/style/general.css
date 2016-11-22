@@ -228,5 +228,11 @@ td {
   background-color: #BB5555;
   border:none;
   padding: 12px 20px;
+<<<<<<< HEAD
   font-family: 'Open sans', sans-serif;
+=======
+	background:#fff;
+  font-family: 'Open sans', sans-serif;
+	color:#555;
+>>>>>>> origin/master
 }
