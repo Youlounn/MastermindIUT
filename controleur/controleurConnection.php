@@ -35,6 +35,7 @@ class ControleurConnection{
   function deco(){
     if(isset($_SESSION['pseudo'])){
       unset($_SESSION['pseudo']);
+      session_destroy();
     }
     $this->vueCo->acceuil();
   }

@@ -1,19 +1,27 @@
 <?php
-require __DIR__."/../modele/jeu.php";
-require __DIR__."/../vue/vuePartie.php";
+require_once __DIR__."/../modele/jeu.php";
+require_once __DIR__."/../vue/vuePartie.php";
+
+if(!isset($_SESSION)){
+    session_start();
+}
+
 class ControleurJeu {
 
   private $jeu;
   private $vuePart;
 
-  function __construct(){
-    $this->jeu = new Jeu();
+  function __construct($new=false){
+    if(!isset($_SESSION['jeu']) || $_SESSION['jeu'] == null){
+      $_SESSION['jeu'] = new Jeu();
+    }
     $this->vuePart = new vuePartie();
   }
 
   function jeu($p1, $p2, $p3, $p4){
     $send = array($p1, $p2, $p3, $p4);
-    var_dump($this->jeu->joue($send));
+    var_dump($_SESSION['jeu']->joue($send));
+    var_dump($_SESSION['jeu']->getRes());
     $this->vuePart->acceuil();
   }
 
@@ -21,6 +29,4 @@ class ControleurJeu {
     //$this->jeu->getRes();
     $this->vuePart->acceuil();
   }
-
-
 }

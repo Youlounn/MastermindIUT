@@ -1,7 +1,9 @@
 <?php
-session_start();
 require "controleurConnection.php";
 require "controleurJeu.php";
+if(!isset($_SESSION)){
+    session_start();
+}
 class Base{
 
   private $ctrlConnect;
