@@ -20,7 +20,7 @@ class ControleurJeu {
     try {
       $this->bd = new Bd();
     } catch (MonException $e){
-      return $e->afficher();
+      $this->vuePart->solution(0,0,0,0, $e->afficher());
     }
     $this->vuePart = new vuePartie();
   }
@@ -34,9 +34,11 @@ class ControleurJeu {
         var_dump($_SESSION['jeu']->getRes());
       } else {
         $this->vuePart->solution($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative(), $_SESSION['jeu']->getRes(), 0, "Vous avez perdue");
+        $this->bd->ajoutStat($_SESSION['pseudo'], false, $_SESSION['jeu']->getTentative());
       }
     } else {
       $this->vuePart->solution($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative(), $_SESSION['jeu']->getRes(), 1, "Vous avez reussi a gagné");
+      $this->bd->ajoutStat($_SESSION['pseudo'], true, $_SESSION['jeu']->getTentative());
     }
   }
 
