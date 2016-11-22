@@ -33,10 +33,10 @@ class ControleurJeu {
         $this->vuePart->acceuil($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative());
         var_dump($_SESSION['jeu']->getRes());
       } else {
-        $this->vuePart->solution($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative(), $_SESSION['jeu']->getRes(), 0);
+        $this->vuePart->solution($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative(), $_SESSION['jeu']->getRes(), 0, "Vous avez perdue");
       }
     } else {
-      $this->vuePart->solution($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative(), $_SESSION['jeu']->getRes(), 1);
+      $this->vuePart->solution($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative(), $_SESSION['jeu']->getRes(), 1, "Vous avez reussi a gagné");
     }
   }
 
@@ -46,7 +46,10 @@ class ControleurJeu {
   }
 
   function affichage(){
-    //$this->jeu->getRes();
-    $this->vuePart->acceuil(0,0,0);
+    if(isset($_SESSION['jeu'])){
+        $this->vuePart->acceuil($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative());
+      } else {
+      $this->vuePart->acceuil(0,0,0);
+    }
   }
 }

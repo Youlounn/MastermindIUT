@@ -84,10 +84,10 @@ class VuePartie{
         <table id="form">
           <form method="POST" action="index.php">
             <tr>
-              <td><input type="number" name="pion1" value="0"/></td>
-              <td><input type="number" name="pion2" value="1"/></td>
-              <td><input type="number" name="pion3" value="2"/></td>
-              <td><input type="number" name="pion4" value="3"/></td>
+              <td><input class="a" type="number" min="0" max="7" name="pion1" value="1"/></td>
+              <td><input class="a" type="number" min="0" max="7" name="pion2" value="1"/></td>
+              <td><input class="a" type="number" min="0" max="7" name="pion3" value="1"/></td>
+              <td><input class="a" type="number" min="0" max="7" name="pion4" value="1"/></td>
               <td>
                 <input type="hidden" name="sendType" value="4"  />
                 <input type="submit" value="Valider" />
@@ -97,14 +97,14 @@ class VuePartie{
         </table>
         <table id="colors">
           <tr>
-            <td class="a"></td>
-            <td class="b"></td>
-            <td class="c"></td>
-            <td class="d"></td>
-            <td class="e"></td>
-            <td class="f"></td>
-            <td class="g"></td>
-            <td class="h"></td>
+            <td class="h">0</td>
+            <td class="a">1</td>
+            <td class="d">2</td>
+            <td class="c">3</td>
+            <td class="b">4</td>
+            <td class="g">5</td>
+            <td class="f">6</td>
+            <td class="e">7</td>
           </tr>
         </table>
 
@@ -117,7 +117,7 @@ class VuePartie{
         <?php
       }
 
-      function solution($partie, $result, $tentative, $solution, $win){
+      function solution($partie, $result, $tentative, $solution, $win, $msg){
         header("Content-type: text/html; charset=utf-8");
         ?>
         <html>
@@ -133,9 +133,9 @@ class VuePartie{
         </header>
         <?php
         if($win == 1) {
-          echo "<div class='information'><b>Bien joué !</b> Vous avez reussi a gagné</div>";
+          echo "<div class='information'><b>Bien joué ! </b>".$msg."</div>";
         } else {
-          echo "<div class='erreur'><b>Echec !</b> Vous avez perdue</div>";
+          echo "<div class='erreur'><b>Echec ! </b>".$msg."</div>";
         }
         ?>
         <div id="jeu">
