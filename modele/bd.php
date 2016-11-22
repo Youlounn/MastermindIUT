@@ -93,6 +93,18 @@
    }
  }
 
+ public function ajoutStat($joueur, $gagner, $nbcoups){
+   try{
+     $stmt=$this->connexion->prepare("INSERT INTO parties(pseudo,partieGagnee,nombreCoups) VALUE (?,?,?)");
+     $stmt->bind_param($joueur,$gagner,$nbcoups);
+     $stmt->execute();
+   }
+   catch(PDOException $e){
+     throw new TableAccessException("Erreur avec la table partie");
+
+   }
+ }
+
 }
 
 

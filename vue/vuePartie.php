@@ -244,7 +244,7 @@ class VuePartie{
           </table>
           <form method="post" action="index.php">
             <input type="hidden" name="sendType" value="2" />
-            <input type="submit" value="Deconnection" />
+            <input  id="deco" type="submit" value="Deconnection" />
           </form>
       <div>
     </body>
@@ -354,7 +354,7 @@ class VuePartie{
 
           <form method="post" action="index.php">
             <input type="hidden" name="sendType" value="2" />
-            <input type="submit" value="Deconnection" />
+            <input id="deco" type="submit" value="Deconnection" />
           </form>
       <div>
     </body>
