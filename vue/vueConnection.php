@@ -16,8 +16,6 @@ class VueConnection{
         <div class="page">Connexion</div>
         <div class="title">Mastermind</div>
       </header>
-      <br/>
-      <br/>
       <div class="form">
       <form method="post" action="index.php">
         <input type="text" name="nom"  placeholder="Pseudo"/><br />

@@ -11,11 +11,12 @@ header {
   left : 0px;
   top : 0px;
   display : inline-block;
-  position : absolute;
+  position : fixed;
   height : auto;
 }
 
 #jeu {
+  margin-top : 50px;
   height: 100%;
 }
 

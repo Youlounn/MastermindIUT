@@ -49,7 +49,7 @@ class Jeu{
       } else {
         $verif = 3;
       }
-      $cpy ++ ;
+      $cpt ++ ;
       array_push($res, $verif);
     }
     $this->historyRes[$this->tentative] = $res;

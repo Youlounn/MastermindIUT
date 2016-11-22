@@ -16,10 +16,6 @@ class VuePartie{
         <div class="page">Jeu</div>
         <div class="title">Mastermind</div>
       </header>
-    </br>
-    </br>
-    </br>
-    </br>
       <div id="jeu">
           <table id="result">
             <tr>
@@ -221,16 +217,18 @@ class VuePartie{
             </tbody>
           </table>
           <table id="form">
+            <form method="POST" action="index.php">
             <tr>
-              <td><input type="button" name="valider1" value="Tentative pion 1"/></td>
-              <td><input type="button" name="valider2" value="Tentative pion 2"/></td>
-              <td><input type="button" name="valider3" value="Tentative pion 3"/></td>
-              <td><input type="button" name="valider4" value="Tentative pion 4"/></td>
-              <td><form method="POST" action="index.php">
-                <input type="hidden" name="sendType" value="5"  />
-                <input type="button" value="Valider" />
-              </form></td>
+              <td><input type="number" name="pion1" value="0"/></td>
+              <td><input type="number" name="pion2" value="1"/></td>
+              <td><input type="number" name="pion3" value="2"/></td>
+              <td><input type="number" name="pion4" value="3"/></td>
+              <td>
+                <input type="hidden" name="sendType" value="4"  />
+                <input type="submit" value="Valider" />
+              </td>
             </tr>
+            </form>
           </table>
           <table id="colors">
             <tr>
@@ -244,7 +242,6 @@ class VuePartie{
               <td class="h"></td>
             </tr>
           </table>
-
           <form method="post" action="index.php">
             <input type="hidden" name="sendType" value="2" />
             <input type="submit" value="Deconnection" />
@@ -268,10 +265,6 @@ class VuePartie{
         <div class="page">Jeu</div>
         <div class="title">Mastermind</div>
       </header>
-    </br>
-    </br>
-    </br>
-    </br>
       <div id="jeu">
           <table id="result">
             <tr>
@@ -335,13 +328,13 @@ class VuePartie{
           <table id="form">
             <form method="POST" action="index.php">
             <tr>
-              <td><input type="button" name="valider1" value="Tentative pion 1"/></td>
-              <td><input type="button" name="valider2" value="Tentative pion 2"/></td>
-              <td><input type="button" name="valider3" value="Tentative pion 3"/></td>
-              <td><input type="button" name="valider4" value="Tentative pion 4"/></td>
+              <td><input type="button" name="pion1" value="0"/></td>
+              <td><input type="button" name="pion2" value="1"/></td>
+              <td><input type="button" name="pion3" value="2"/></td>
+              <td><input type="button" name="pion4" value="3"/></td>
               <td>
-                <input type="hidden" name="sendType" value="3"  />
-                <input type="button" value="Valider" />
+                <input type="hidden" name="sendType" value="4"  />
+                <input type="submit" value="Valider" />
               </td>
             </tr>
             </form>

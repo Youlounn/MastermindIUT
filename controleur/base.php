@@ -27,11 +27,7 @@ class Base{
       } else if($sd == 3) { //Si le formulaire est le 3eme (Affichage de la partie)
         $this->ctrlJeu->affichage();
       } else if($sd == 4) { //Si les formulaire est le 4eme (envoi d'une partie)
-        $p1 = $_POST['p1'];
-        $p2 = $_POST['p2'];
-        $p3 = $_POST['p3'];
-        $p4 = $_POST['p4'];
-        $this->ctrlJeu->jeu($p1, $p2, $p3, $p4);
+        $this->ctrlJeu->jeu($_POST['pion1'], $_POST['pion2'], $_POST['pion3'], $_POST['pion4']);
       }
     } else { //Si aucun formulaire n'est renseigné
       if(!isset($_SESSION['pseudo'])){ //Si l'utilisateur n'existe pas

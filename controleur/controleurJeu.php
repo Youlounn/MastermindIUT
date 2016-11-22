@@ -11,12 +11,14 @@ class ControleurJeu {
     $this->vuePart = new vuePartie();
   }
 
-  function verif($p1, $p2, $p3, $p4){
+  function jeu($p1, $p2, $p3, $p4){
     $send = array($p1, $p2, $p3, $p4);
-    return $this->jeu->joue($send);
+    var_dump($this->jeu->joue($send));
+    $this->vuePart->acceuil();
   }
 
   function affichage(){
+    //$this->jeu->getRes();
     $this->vuePart->acceuil();
   }
 
