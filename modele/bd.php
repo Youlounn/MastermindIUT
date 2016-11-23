@@ -88,22 +88,17 @@
      }
      return $mdp;
 
-   }catch(PDOException $e){
+   } catch(PDOException $e){
      throw new TableAccesException("Problème avec la table Pseudonyme");
    }
  }
 
  public function ajoutStat($joueur, $gagner, $nbcoups){
    try{
-     $stmt=$this->connexion->prepare("INSERT INTO parties(pseudo,partieGagnee,nombreCoups) VALUE (:name,:victoire,:nbr)");
-     $stmt->bindParam(':name', "'".$joueur."'");
-     $stmt->bindParam(':victoire', $gagner);
-     $stmt->bindParam(':nbr', $nbcoups);
-     $stmt->execute();
+     $stmt=$this->connexion->query("INSERT INTO parties(pseudo,partieGagnee,nombreCoups) VALUE ('".$joueur."',".$gagner.",".$nbcoups.")");
    }
    catch(PDOException $e){
      throw new TableAccessException("Erreur avec la table partie");
-
    }
  }
 

@@ -33,25 +33,36 @@ class ControleurJeu {
         $this->vuePart->acceuil($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative());
         var_dump($_SESSION['jeu']->getRes());
       } else {
-        $this->vuePart->solution($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative(), $_SESSION['jeu']->getRes(), 0, "Vous avez perdue");
-        $this->bd->ajoutStat($_SESSION['pseudo'], false, $_SESSION['jeu']->getTentative());
+        $msg = "Vous avez perdue";
+        try {
+          $this->bd->ajoutStat($_SESSION['pseudo'], false, $_SESSION['jeu']->getTentative());
+        } catch (MonException $e) {
+          $msg += $e->afficher();
+        }
+        $this->vuePart->solution($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative(), $_SESSION['jeu']->getRes(), 0, $msg);
       }
-    } else {
-      $this->vuePart->solution($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative(), $_SESSION['jeu']->getRes(), 1, "Vous avez reussi a gagné");
-      $this->bd->ajoutStat($_SESSION['pseudo'], true, $_SESSION['jeu']->getTentative());
     }
+  } else {
+    $msg = "Vous avez reussi a gagné";
+    try {
+      $this->bd->ajoutStat($_SESSION['pseudo'], true, $_SESSION['jeu']->getTentative());
+    } catch (MonException $e) {
+      $msg += $e->afficher();
+    }
+    $this->vuePart->solution($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative(), $_SESSION['jeu']->getRes(), 1, $msg);
   }
+}
 
-  function newGame(){
-    $_SESSION['jeu'] = new Jeu();
+function newGame(){
+  $_SESSION['jeu'] = new Jeu();
+  $this->vuePart->acceuil(0,0,0);
+}
+
+function affichage(){
+  if(isset($_SESSION['jeu'])){
+    $this->vuePart->acceuil($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative());
+  } else {
     $this->vuePart->acceuil(0,0,0);
   }
-
-  function affichage(){
-    if(isset($_SESSION['jeu'])){
-        $this->vuePart->acceuil($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative());
-      } else {
-      $this->vuePart->acceuil(0,0,0);
-    }
-  }
+}
 }

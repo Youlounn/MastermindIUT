@@ -255,7 +255,6 @@ class VuePartie{
                       ?> <td id='pionAff' class='e'></td> <?php
                     }
                   }
-
                   ?> <td><table><tr> <?php
                   asort($result[$cpt]);
                   foreach($result[$cpt] as $res){
