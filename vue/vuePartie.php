@@ -45,21 +45,21 @@ class VuePartie{
               echo "<td>N°".$tmp."</td>";
               foreach($partie[$cpt] as $essai){
                 if($essai == 0){
-                  ?> <td class='h'></td> <?php
+                  ?> <td id='pionAff' class='h'></td> <?php
                 } else if($essai == 1){
-                  ?> <td class='a'></td> <?php
+                  ?> <td id='pionAff' class='a'></td> <?php
                 } else if($essai == 2){
-                  ?> <td class='d'></td> <?php
+                  ?> <td id='pionAff' class='d'></td> <?php
                 } else if($essai == 3){
-                  ?> <td class='c'></td> <?php
+                  ?> <td id='pionAff' class='c'></td> <?php
                 } else if($essai == 4){
-                  ?> <td class='b'></td> <?php
+                  ?> <td id='pionAff' class='b'></td> <?php
                 } else if($essai == 5){
-                  ?> <td class='g'></td> <?php
+                  ?> <td id='pionAff' class='g'></td> <?php
                 } else if($essai == 6){
-                  ?> <td class='f'></td> <?php
+                  ?> <td id='pionAff' class='f'></td> <?php
                 } else if($essai == 7){
-                  ?> <td class='e'></td> <?php
+                  ?> <td id='pionAff' class='e'></td> <?php
                 }
               }
 
@@ -67,11 +67,9 @@ class VuePartie{
               asort($result[$cpt]);
               foreach($result[$cpt] as $res){
                 if($res == 1){
-                  ?> <td class='black'></td> <?php
+                  ?> <td id='resAff' class='black'></td> <?php
                 } else if($res == 2){
-                  ?> <td class='white'></td> <?php
-                } else {
-                  ?> <td></td> <?php
+                  ?> <td id='resAff' class='white'></td> <?php
                 }
               }
               ?> </tr></table></td></tr> <?php
@@ -85,10 +83,10 @@ class VuePartie{
           <caption>Séléction</caption>
           <form method="POST" action="index.php">
             <tr>
-              <td><input class="hide" onDblclick="colorClickDel('pion1')" onChange="colorClickEvol('pion1')" type="number" min="0" max="7" id="pion1" name="pion1" value="1"/><p class="edit">0</p></td>
-              <td><input class="hide" onDblclick="colorClickDel('pion2')" onChange="colorClickEvol('pion2')" type="number" min="0" max="7" id="pion2" name="pion2" value="1"/><p class="edit">0</p></td>
-              <td><input class="hide" onDblclick="colorClickDel('pion3')" onChange="colorClickEvol('pion3')" type="number" min="0" max="7" id="pion3" name="pion3" value="1"/><p class="edit">0</p></td>
-              <td><input class="hide" onDblclick="colorClickDel('pion4')" onChange="colorClickEvol('pion4')" type="number" min="0" max="7" id="pion4" name="pion4" value="1"/><p class="edit">0</p></td>
+              <td><input class="hide" onDblclick="colorClickDel('pion1')" onChange="colorClickEvol('pion1')" type="number" min="0" max="7" id="pion1" name="pion1" required><p class="edit">0</p></td>
+              <td><input class="hide" onDblclick="colorClickDel('pion2')" onChange="colorClickEvol('pion2')" type="number" min="0" max="7" id="pion2" name="pion2" required><p class="edit">0</p></td>
+              <td><input class="hide" onDblclick="colorClickDel('pion3')" onChange="colorClickEvol('pion3')" type="number" min="0" max="7" id="pion3" name="pion3" required><p class="edit">0</p></td>
+              <td><input class="hide" onDblclick="colorClickDel('pion4')" onChange="colorClickEvol('pion4')" type="number" min="0" max="7" id="pion4" name="pion4" required><p class="edit">0</p></td>
               <td>
                 <input type="hidden" name="sendType" value="4"  />
                 <input type="submit" value="Valider" />
@@ -126,6 +124,7 @@ class VuePartie{
         function colorClickDel(nom){
           var couleurBox = document.getElementById(nom);
           couleurBox.className = "hide";
+          couleurBox.value = "";
           couleurBox.parentNode.children[1].innerHTML = 0;
         }
 

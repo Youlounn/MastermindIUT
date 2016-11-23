@@ -62,14 +62,14 @@ td {
   text-align: center;
 }
 
-#plateau td {
-  border-bottom: solid 1px black;
-  text-align: center;
+#plateau #pionAff {
+  border-radius : 50px;
 }
 
-#plateau table td{
-  border: solid 1px #ECECEC;
-  border-radius: 5px;
+#plateau td {
+  border-bottom: solid 1px black;
+  border-radius : 5px;
+  text-align: center;
 }
 
 #plateau td .black{
