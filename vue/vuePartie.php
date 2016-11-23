@@ -67,9 +67,9 @@ class VuePartie{
               asort($result[$cpt]);
               foreach($result[$cpt] as $res){
                 if($res == 1){
-                  ?> <td id='resAff' class='black'></td> <?php
+                  ?> <td class='black'></td> <?php
                 } else if($res == 2){
-                  ?> <td id='resAff' class='white'></td> <?php
+                  ?> <td class='white'></td> <?php
                 }
               }
               ?> </tr></table></td></tr> <?php
@@ -238,21 +238,21 @@ class VuePartie{
                   echo "<td>N°".$tmp."</td>";
                   foreach($partie[$cpt] as $essai){
                     if($essai == 0){
-                      ?> <td class='h'></td> <?php
+                      ?> <td id='pionAff' class='h'></td> <?php
                     } else if($essai == 1){
-                      ?> <td class='a'></td> <?php
+                      ?> <td id='pionAff' class='a'></td> <?php
                     } else if($essai == 2){
-                      ?> <td class='d'></td> <?php
+                      ?> <td id='pionAff' class='d'></td> <?php
                     } else if($essai == 3){
-                      ?> <td class='c'></td> <?php
+                      ?> <td id='pionAff' class='c'></td> <?php
                     } else if($essai == 4){
-                      ?> <td class='b'></td> <?php
+                      ?> <td id='pionAff' class='b'></td> <?php
                     } else if($essai == 5){
-                      ?> <td class='g'></td> <?php
+                      ?> <td id='pionAff' class='g'></td> <?php
                     } else if($essai == 6){
-                      ?> <td class='f'></td> <?php
+                      ?> <td id='pionAff' class='f'></td> <?php
                     } else if($essai == 7){
-                      ?> <td class='e'></td> <?php
+                      ?> <td id='pionAff' class='e'></td> <?php
                     }
                   }
 
