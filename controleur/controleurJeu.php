@@ -14,6 +14,7 @@ class ControleurJeu {
   private $vuePart;
 
   function __construct($new=false){
+    $this->vuePart = new vuePartie();
     if(!isset($_SESSION['jeu']) || $_SESSION['jeu'] == null){
       $_SESSION['jeu'] = new Jeu();
     }
@@ -22,7 +23,6 @@ class ControleurJeu {
     } catch (MonException $e){
       $this->vuePart->solution(0,0,0,0, $e->afficher());
     }
-    $this->vuePart = new vuePartie();
   }
 
   function jeu($p1, $p2, $p3, $p4){
