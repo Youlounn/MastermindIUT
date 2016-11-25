@@ -39,7 +39,7 @@ class ControleurJeu {
       } else {
         $msg = "Vous avez perdu";
         try {
-          $this->bd->ajoutStat($_SESSION['pseudo'], false, $_SESSION['jeu']->getTentative());
+          $this->bd->ajoutStat($_SESSION['pseudo'], 0, $_SESSION['jeu']->getTentative());
         } catch (MonException $e) {
           $msg = $msg."<br />".$e->afficher();
         }
@@ -48,7 +48,7 @@ class ControleurJeu {
     } else {
       $msg = "Vous avez reussi à gagner";
       try {
-        $this->bd->ajoutStat($_SESSION['pseudo'], true, $_SESSION['jeu']->getTentative());
+        $this->bd->ajoutStat($_SESSION['pseudo'], 1, $_SESSION['jeu']->getTentative());
       } catch (MonException $e) {
         $msg = $msg."<br />". $e->afficher();
       }

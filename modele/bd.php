@@ -104,8 +104,7 @@
  public function getStat() {
    $res = array();
    try {
-     $stmt=$this->connexion->prepare("SELECT pseudo, nombreCoups FROM parties ORDER BY nombreCoups limit 5");
-     $stmt->execute();
+     $stmt=$this->connexion->query("SELECT pseudo, nombreCoups FROM parties ORDER BY nombreCoups limit 5");
      $res = $stmt->fetchAll();
    } catch(PDOException $e) {
      throw new TableAccesException("Erreur avec la table partie lors de la recuperation des meilleur score");
@@ -116,8 +115,7 @@
  public function getStatJoueur($joueur) {
    $res = array();
    try {
-       $stmt=$this->connexion->prepare("SELECT * FROM parties WHERE pseudo = '".$joueur."' ;");
-       $stmt->execute();
+       $stmt=$this->connexion->query("SELECT * FROM parties WHERE pseudo = '".$joueur."' ;");
        $res = $stmt->fetchAll();
    } catch(PDOException $e) {
      throw new TableAccesException("Erreur avec la table partie lors de la recuperation des statistiques du joueur");

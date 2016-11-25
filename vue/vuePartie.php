@@ -95,14 +95,14 @@ class VuePartie{
         </table>
         <table id="colors">
           <tr>
-            <td class="h" onClick="colorClickPicker('h',0)">0</td>
-            <td class="a" onClick="colorClickPicker('a',1)">1</td>
-            <td class="d" onClick="colorClickPicker('d',2)">2</td>
-            <td class="c" onClick="colorClickPicker('c',3)">3</td>
-            <td class="b" onClick="colorClickPicker('b',4)">4</td>
-            <td class="g" onClick="colorClickPicker('g',5)">5</td>
-            <td class="f" onClick="colorClickPicker('f',6)">6</td>
-            <td class="e" onClick="colorClickPicker('e',7)">7</td>
+            <td class="h" onClick="colorClickPicker('h',0)"></td>
+            <td class="a" onClick="colorClickPicker('a',1)"></td>
+            <td class="d" onClick="colorClickPicker('d',2)"></td>
+            <td class="c" onClick="colorClickPicker('c',3)"></td>
+            <td class="b" onClick="colorClickPicker('b',4)"></td>
+            <td class="g" onClick="colorClickPicker('g',5)"></td>
+            <td class="f" onClick="colorClickPicker('f',6)"></td>
+            <td class="e" onClick="colorClickPicker('e',7)"></td>
           </tr>
         </table>
 
@@ -190,7 +190,6 @@ class VuePartie{
             <input id="deco" type="submit" value="Deconnexion" />
           </form>
         </div>
-        <?php var_dump($statJoueur); ?>
       </body>
       <script>
       function colorClickDel(nom){
@@ -364,6 +363,60 @@ class VuePartie{
               }
 
               ?>
+            </tbody>
+          </table>
+
+          <table id="stats">
+            <thead>
+              <tr>
+                <td>Information</td>
+                <td>Résultat</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Nombre de partie joué</td>
+                <td>
+                  <?php
+                  $cpt = 1;
+                  foreach($statJoueur as $stat) {
+                    $cpt += 1;
+                  }
+                  echo $cpt;
+                  ?>
+                </td>
+              </tr>
+              <tr>
+                <td>Nombre de partie gagné</td>
+                <td>
+                  <?php
+                  $cpt = 1;
+                  foreach($statJoueur as $stat) {
+                    if($stat['partieGagnee'] == 1){
+                      $cpt += 1 ;
+                    }
+                  }
+                  echo $cpt;
+                   ?>
+                </td>
+              </tr>
+              <tr>
+                <td>Moyenne nombre de coup pour victoire</td>
+                <td>
+                  <?php
+                  $cpt = 1;
+                  $moy = 1;
+                  foreach($statJoueur as $stat) {
+                    if($stat['partieGagnee'] == 1){
+                      $cpt += 1 ;
+                      $moy += $stat['nombreCoups'];
+                    }
+                  }
+                  $moy = $moy/$cpt ;
+                  echo $moy;
+                   ?>
+                </td>
+              </tr>
             </tbody>
           </table>
 
