@@ -378,26 +378,7 @@ class VuePartie{
               ?>
             </tr>
           </table>
-          <table id="stats">
-            <thead>
-              <tr>
-                <th>Joueur</th>
-                <th>Nombre de coup</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php
-              foreach($stat as $score){
-                echo "<tr>
-                <td>".$score[0]."</td>
-                <td>".$score[1]."</td>
-                </tr>";
-              }
-
-              ?>
-            </tbody>
-          </table>
-
+          
           <table id="stats">
             <thead>
               <tr>
