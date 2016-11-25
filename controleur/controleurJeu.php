@@ -30,7 +30,7 @@ class ControleurJeu {
     $test = $_SESSION['jeu']->joue($send);
     if($_SESSION['jeu']->gagne($test) == false){
       if($_SESSION['jeu']->getTentative() < 10){
-        $this->vuePart->acceuil($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative(), $this->bd->getStat());
+        $this->vuePart->acceuil($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative(), $this->bd->getStat(), $this->bd->getStatJoueur($_SESSION['pseudo']));
         var_dump($_SESSION['jeu']->getRes());
       } else {
         $msg = "Vous avez perdue";
@@ -39,16 +39,16 @@ class ControleurJeu {
         } catch (MonException $e) {
           $msg += $e->afficher();
         }
-        $this->vuePart->solution($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative(), $_SESSION['jeu']->getRes(), 0, $msg, $this->bd->getStat());
+        $this->vuePart->solution($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative(), $_SESSION['jeu']->getRes(), 0, $msg, $this->bd->getStat(), $this->bd->getStatJoueur($_SESSION['pseudo']));
       }
   } else {
     $msg = "Vous avez reussi a gagné";
     try {
-      $this->bd->ajoutStat($_SESSION['pseudo'], true, $_SESSION['jeu']->getTentative());
+      $this->bd->ajoutStat($_SESSION['pseudo'], true, $_SESSION['jeu']->getTentative(), $this->bd->getStatJoueur($_SESSION['pseudo']));
     } catch (MonException $e) {
       $msg += $e->afficher();
     }
-    $this->vuePart->solution($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative(), $_SESSION['jeu']->getRes(), 1, $msg, $this->bd->getStat());
+    $this->vuePart->solution($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative(), $_SESSION['jeu']->getRes(), 1, $msg, $this->bd->getStat(), $this->bd->getStatJoueur($_SESSION['pseudo']));
   }
 }
 
@@ -59,7 +59,7 @@ function newGame(){
 
 function affichage(){
   if(isset($_SESSION['jeu'])){
-    $this->vuePart->acceuil($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative(), $this->bd->getStat());
+    $this->vuePart->acceuil($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative(), $this->bd->getStat(), $this->bd->getStatJoueur($_SESSION['pseudo']));
   } else {
     $this->vuePart->acceuil(0,0,0);
   }

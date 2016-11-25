@@ -35,7 +35,7 @@
 
    public function __construct(){
     try{
-        $chaine="mysql:host=localhost;dbname=mastermind";
+        $chaine="mysql:host=localhost;dbname=projetWebServeur";
         $this->connexion = new PDO($chaine,"root","");
        $this->connexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
       }
@@ -109,7 +109,19 @@
      $stmt->execute();
      $res = $stmt->fetchAll();
    } catch(PDOException $e) {
-     throw new TableAccessException("Erreur avec la table partie");
+     throw new TableAccessException("Erreur avec la table partie lors de la recuperation des meilleur score");
+   }
+   return $res;
+ }
+
+ public function getStatJoueur($joueur) {
+   $res = array();
+   try {
+       $stmt=$this->connexion->prepare("SELECT * FROM parties WHERE pseudo = '".$joueur."' ;");
+       $stmt->execute();
+       $res = $stmt->fetchAll();
+   } catch(PDOException $e) {
+     throw new TableAccessException("Erreur avec la table partie lors de la recuperation des statistiques du joueur");
    }
    return $res;
  }
