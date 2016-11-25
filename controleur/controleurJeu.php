@@ -35,7 +35,6 @@ class ControleurJeu {
     if($_SESSION['jeu']->gagne($_SESSION['jeu']->getLastHit()) == false){
       if($_SESSION['jeu']->getTentative() < 10){
         $this->vuePart->acceuil($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative(), $this->bd->getStat(), $this->bd->getStatJoueur($_SESSION['pseudo']));
-        var_dump($_SESSION['jeu']->getRes());
       } else {
         $msg = "Vous avez perdu";
         try {

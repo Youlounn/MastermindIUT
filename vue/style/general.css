@@ -58,7 +58,7 @@ td {
 #plateau {
   margin: auto;
   color: #444444;
-  margin-top: 15px;
+  margin-top: 30px;
   text-align: center;
 }
 
@@ -83,7 +83,7 @@ td {
 
 #form {
   margin: auto;
-  margin-top: 15px;
+  margin-top: 30px;
   width: 40%;
   height: 6%;
   border: solid 1px black;
@@ -314,8 +314,8 @@ td {
 
 #result {
     margin : auto;
+    margin-top : 10px;
     font-size: 14px;
-    margin-top : 5%;
     padding : 1%;
     border-radius : 5px;
     width :25%;
@@ -330,4 +330,11 @@ td {
   border: 1px solid black;
   display: inline-block;
   margin: 10px;
+  padding:5px;
+}
+
+#stats ,#stats td,#stats th {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding:5px;
 }

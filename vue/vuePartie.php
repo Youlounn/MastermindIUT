@@ -18,12 +18,32 @@ class VuePartie{
       <div class="title">Mastermind</div>
     </header>
     <div id="jeu">
-      <table id="result">
+
+      <table id="form">
+        <caption>Séléction, nombre de coup restant : <?php echo 10-$tentative;  ?></caption>
+        <form method="POST" action="index.php">
+          <tr>
+            <td><input class="hide" onDblclick="colorClickDel('pion1')" onChange="colorClickEvol('pion1')" type="number" min="0" max="7" id="pion1" name="pion1" required><p class="edit">0</p></td>
+            <td><input class="hide" onDblclick="colorClickDel('pion2')" onChange="colorClickEvol('pion2')" type="number" min="0" max="7" id="pion2" name="pion2" required><p class="edit">0</p></td>
+            <td><input class="hide" onDblclick="colorClickDel('pion3')" onChange="colorClickEvol('pion3')" type="number" min="0" max="7" id="pion3" name="pion3" required><p class="edit">0</p></td>
+            <td><input class="hide" onDblclick="colorClickDel('pion4')" onChange="colorClickEvol('pion4')" type="number" min="0" max="7" id="pion4" name="pion4" required><p class="edit">0</p></td>
+            <td>
+              <input type="hidden" name="sendType" value="4"  />
+              <input type="submit" value="Valider" />
+            </td>
+          </tr>
+        </form>
+      </table>
+      <table id="colors">
         <tr>
-          <td class='hide'></td>
-          <td class='hide'></td>
-          <td class='hide'></td>
-          <td class='hide'></td>
+          <td class="h" onClick="colorClickPicker('h',0)"></td>
+          <td class="a" onClick="colorClickPicker('a',1)"></td>
+          <td class="d" onClick="colorClickPicker('d',2)"></td>
+          <td class="c" onClick="colorClickPicker('c',3)"></td>
+          <td class="b" onClick="colorClickPicker('b',4)"></td>
+          <td class="g" onClick="colorClickPicker('g',5)"></td>
+          <td class="f" onClick="colorClickPicker('f',6)"></td>
+          <td class="e" onClick="colorClickPicker('e',7)"></td>
         </tr>
       </table>
       <table id="plateau">
@@ -78,39 +98,21 @@ class VuePartie{
             ?>
           </tbody>
         </table>
-        <table id="form">
-          <caption>Séléction, nombre de coup restant : <?php echo 10-$tentative;  ?></caption>
-          <form method="POST" action="index.php">
-            <tr>
-              <td><input class="hide" onDblclick="colorClickDel('pion1')" onChange="colorClickEvol('pion1')" type="number" min="0" max="7" id="pion1" name="pion1" required><p class="edit">0</p></td>
-              <td><input class="hide" onDblclick="colorClickDel('pion2')" onChange="colorClickEvol('pion2')" type="number" min="0" max="7" id="pion2" name="pion2" required><p class="edit">0</p></td>
-              <td><input class="hide" onDblclick="colorClickDel('pion3')" onChange="colorClickEvol('pion3')" type="number" min="0" max="7" id="pion3" name="pion3" required><p class="edit">0</p></td>
-              <td><input class="hide" onDblclick="colorClickDel('pion4')" onChange="colorClickEvol('pion4')" type="number" min="0" max="7" id="pion4" name="pion4" required><p class="edit">0</p></td>
-              <td>
-                <input type="hidden" name="sendType" value="4"  />
-                <input type="submit" value="Valider" />
-              </td>
-            </tr>
-          </form>
-        </table>
-        <table id="colors">
+
+        <table id="result">
           <tr>
-            <td class="h" onClick="colorClickPicker('h',0)"></td>
-            <td class="a" onClick="colorClickPicker('a',1)"></td>
-            <td class="d" onClick="colorClickPicker('d',2)"></td>
-            <td class="c" onClick="colorClickPicker('c',3)"></td>
-            <td class="b" onClick="colorClickPicker('b',4)"></td>
-            <td class="g" onClick="colorClickPicker('g',5)"></td>
-            <td class="f" onClick="colorClickPicker('f',6)"></td>
-            <td class="e" onClick="colorClickPicker('e',7)"></td>
+            <td class='hide'></td>
+            <td class='hide'></td>
+            <td class='hide'></td>
+            <td class='hide'></td>
           </tr>
         </table>
 
         <table id="stats">
           <thead>
             <tr>
-              <td>Joueur</td>
-              <td>Nombre de coup</td>
+              <th>Joueur</th>
+              <th>Nombre de coup</th>
             </tr>
           </thead>
           <tbody>
@@ -129,11 +131,25 @@ class VuePartie{
         <table id="stats">
           <thead>
             <tr>
-              <td>Information</td>
-              <td>Résultat</td>
+              <th>Information</th>
+              <th>Résultat</th>
             </tr>
           </thead>
           <tbody>
+          <tr>
+            <td>Meilleur score pour victoire</td>
+            <td>
+              <?php
+              $old = 10;
+              foreach($statJoueur as $stat) {
+                if($stat['nombreCoups'] < $old){
+                  $old = $stat['nombreCoups'];
+                }
+              }
+              echo $old;
+              ?>
+            </td>
+          </tr>
             <tr>
               <td>Nombre de partie joué</td>
               <td>
@@ -157,7 +173,7 @@ class VuePartie{
                   }
                 }
                 echo $cpt;
-                 ?>
+                ?>
               </td>
             </tr>
             <tr>
@@ -174,7 +190,25 @@ class VuePartie{
                 }
                 $moy = $moy/$cpt ;
                 echo $moy;
-                 ?>
+                ?>
+              </td>
+            </tr>
+            <tr>
+              <td>Ratio victoire/defaite</td>
+              <td>
+                <?php
+                $vic = 1;
+                $def = 1;
+                foreach($statJoueur as $stat) {
+                  if($stat['partieGagnee'] == 1){
+                    $vic += 1 ;
+                  } else {
+                    $def += 1;
+                  }
+                }
+                $res = $vic/$def ;
+                echo $res;
+                ?>
               </td>
             </tr>
           </tbody>
@@ -266,31 +300,6 @@ class VuePartie{
       }
       ?>
       <div id="jeu">
-        <table id="result">
-          <tr>
-            <?php
-            foreach($solution as $sol) {
-              if($sol == 0){
-                ?> <td class='h'></td> <?php
-              } else if($sol == 1){
-                ?> <td class='a'></td> <?php
-              } else if($sol == 2){
-                ?> <td class='d'></td> <?php
-              } else if($sol == 3){
-                ?> <td class='c'></td> <?php
-              } else if($sol == 4){
-                ?> <td class='b'></td> <?php
-              } else if($sol == 5){
-                ?> <td class='g'></td> <?php
-              } else if($sol == 6){
-                ?> <td class='f'></td> <?php
-              } else if($sol == 7){
-                ?> <td class='e'></td> <?php
-              }
-            }
-            ?>
-          </tr>
-        </table>
         <table id="plateau">
           <thead>
             <td>Essai</td>
@@ -344,13 +353,36 @@ class VuePartie{
               ?>
             </tbody>
           </table>
-
-
+          <table id="result">
+            <tr>
+              <?php
+              foreach($solution as $sol) {
+                if($sol == 0){
+                  ?> <td class='h'></td> <?php
+                } else if($sol == 1){
+                  ?> <td class='a'></td> <?php
+                } else if($sol == 2){
+                  ?> <td class='d'></td> <?php
+                } else if($sol == 3){
+                  ?> <td class='c'></td> <?php
+                } else if($sol == 4){
+                  ?> <td class='b'></td> <?php
+                } else if($sol == 5){
+                  ?> <td class='g'></td> <?php
+                } else if($sol == 6){
+                  ?> <td class='f'></td> <?php
+                } else if($sol == 7){
+                  ?> <td class='e'></td> <?php
+                }
+              }
+              ?>
+            </tr>
+          </table>
           <table id="stats">
             <thead>
               <tr>
-                <td>Joueur</td>
-                <td>Nombre de coup</td>
+                <th>Joueur</th>
+                <th>Nombre de coup</th>
               </tr>
             </thead>
             <tbody>
@@ -369,11 +401,45 @@ class VuePartie{
           <table id="stats">
             <thead>
               <tr>
-                <td>Information</td>
-                <td>Résultat</td>
+                <th>Joueur</th>
+                <th>Nombre de coup</th>
               </tr>
             </thead>
             <tbody>
+              <?php
+              foreach($stat as $score){
+                echo "<tr>
+                <td>".$score[0]."</td>
+                <td>".$score[1]."</td>
+                </tr>";
+              }
+
+              ?>
+            </tbody>
+          </table>
+
+          <table id="stats">
+            <thead>
+              <tr>
+                <th>Information</th>
+                <th>Résultat</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>Meilleur score pour victoire</td>
+              <td>
+                <?php
+                $old = 10;
+                foreach($statJoueur as $stat) {
+                  if($stat['nombreCoups'] < $old){
+                    $old = $stat['nombreCoups'];
+                  }
+                }
+                echo $old;
+                ?>
+              </td>
+            </tr>
               <tr>
                 <td>Nombre de partie joué</td>
                 <td>
@@ -397,7 +463,7 @@ class VuePartie{
                     }
                   }
                   echo $cpt;
-                   ?>
+                  ?>
                 </td>
               </tr>
               <tr>
@@ -414,7 +480,25 @@ class VuePartie{
                   }
                   $moy = $moy/$cpt ;
                   echo $moy;
-                   ?>
+                  ?>
+                </td>
+              </tr>
+              <tr>
+                <td>Ratio victoire/defaite</td>
+                <td>
+                  <?php
+                  $vic = 1;
+                  $def = 1;
+                  foreach($statJoueur as $stat) {
+                    if($stat['partieGagnee'] == 1){
+                      $vic += 1 ;
+                    } else {
+                      $def += 1;
+                    }
+                  }
+                  $res = $vic/$def ;
+                  echo $res;
+                  ?>
                 </td>
               </tr>
             </tbody>
