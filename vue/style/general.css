@@ -323,5 +323,11 @@ td {
 
 .tuto {
   font-size: 10px;
-}family: 'Open sans', sans-serif;
+  font-family: 'Open sans', sans-serif;
+}
+
+#stats {
+  border: 1px solid black;
+  display: inline-block;
+  margin: 10px;
 }

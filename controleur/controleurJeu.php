@@ -42,7 +42,7 @@ class ControleurJeu {
         $this->vuePart->solution($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative(), $_SESSION['jeu']->getRes(), 0, $msg, $this->bd->getStat(), $this->bd->getStatJoueur($_SESSION['pseudo']));
       }
   } else {
-    $msg = "Vous avez reussi a gagné";
+    $msg = "Vous avez reussi à gagner";
     try {
       $this->bd->ajoutStat($_SESSION['pseudo'], true, $_SESSION['jeu']->getTentative(), $this->bd->getStatJoueur($_SESSION['pseudo']));
     } catch (MonException $e) {

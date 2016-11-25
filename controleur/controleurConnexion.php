@@ -25,7 +25,7 @@ class ControleurConnexion{
         $_POST['sendType'] = 3; //On demende l'affichage de la page de base
         echo "<script type='text/javascript'>document.location.replace('index.php');</script>";
       } else {
-          $this->vueCo->echec("Erreur dans pseudo ou mot de passe");
+          $this->vueCo->echec("Erreur dans le pseudo ou le mot de passe");
       }
     } catch (MonException $e) {
       $this->vueCo->echec($e->afficher());
