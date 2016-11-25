@@ -35,7 +35,7 @@
 
    public function __construct(){
     try{
-        $chaine="mysql:host=localhost;dbname=projetWebServeur";
+        $chaine="mysql:host=localhost;dbname=mastermind";
         $this->connexion = new PDO($chaine,"root","");
        $this->connexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
       }

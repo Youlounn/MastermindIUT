@@ -321,14 +321,16 @@ td {
     width :25%;
 }
 
-#tutoriel {
-  display : table;
+.tuto {
+  font-size: 10px;
 }
 
 .tutorialButton {
   width: auto;
-  padding: 12px 20px;
+  padding: 5px 8px;
   margin: 8px 0;
+  float: left;
+  margin-left: 10px;
   border: 0px;
   border-radius : 5px;
   color : white;
@@ -351,8 +353,9 @@ td {
 
 .statButton {
   width: auto;
-  padding: 12px 20px;
-  margin: 8px 0;
+  padding: 5px 8px;
+  float: left;
+  margin: 8px 8;
   border: 0px;
   border-radius : 5px;
   color : white;

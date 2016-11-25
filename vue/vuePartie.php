@@ -15,12 +15,10 @@ class VuePartie{
   <body>
     <header>
       <div class="page">Jeu</div>
-      <button class="tutorialButton">Tutoriel</button>
-      <button class="statButton">Statistiques</button>
+      <button class="statButton">Meilleurs scores</button>
       <div class="title">Mastermind</div>
     </header>
     <div id="jeu">
-
       <table id="result">
         <tr>
           <td class='hide'></td>
@@ -109,13 +107,6 @@ class VuePartie{
           </tr>
         </table>
 
-        <table id="tutoriel">
-          <tr>
-            <td>Cliqué sur une couleur pour l'ajouté a une case</td>
-            <td>Entré un nombre entre 0 et 7 dans une case pour lui ajouté une couleur</td>
-            <td>Double cliqué sur une case qui possede une couleur pour lui enlevé</td>
-          </tr>
-        </table>
         <table id="stats">
           <thead>
             <tr>
@@ -135,6 +126,12 @@ class VuePartie{
           ?>
           </tbody>
         </table>
+
+          <div class="tuto">
+              <p>Cliquez sur une couleur pour l'ajouter à une case</br>
+              Entrez un nombre entre 0 et 7 dans une case pour lui ajouter une couleur</br>
+              Double cliquez sur une case qui possède une couleur pour la lui enlever</p>
+          </div>
         <form method="post" action="index.php">
           <input type="hidden" name="sendType" value="2" />
           <input id="deco" type="submit" value="Deconnexion" />
