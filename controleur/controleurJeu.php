@@ -27,8 +27,12 @@ class ControleurJeu {
 
   function jeu($p1, $p2, $p3, $p4){
     $send = array($p1, $p2, $p3, $p4);
-    $test = $_SESSION['jeu']->joue($send);
-    if($_SESSION['jeu']->gagne($test) == false){
+    $_SESSION['jeu']->joue($send);
+    $this->actualisation();
+  }
+
+  function actualisation(){
+    if($_SESSION['jeu']->gagne($_SESSION['jeu']->getLastHit()) == false){
       if($_SESSION['jeu']->getTentative() < 10){
         $this->vuePart->acceuil($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative(), $this->bd->getStat(), $this->bd->getStatJoueur($_SESSION['pseudo']));
         var_dump($_SESSION['jeu']->getRes());
@@ -37,31 +41,31 @@ class ControleurJeu {
         try {
           $this->bd->ajoutStat($_SESSION['pseudo'], false, $_SESSION['jeu']->getTentative());
         } catch (MonException $e) {
-          $msg += $e->afficher();
+          $msg = $msg."<br />".$e->afficher();
         }
         $this->vuePart->solution($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative(), $_SESSION['jeu']->getRes(), 0, $msg, $this->bd->getStat(), $this->bd->getStatJoueur($_SESSION['pseudo']));
       }
-  } else {
-    $msg = "Vous avez reussi à gagner";
-    try {
-      $this->bd->ajoutStat($_SESSION['pseudo'], true, $_SESSION['jeu']->getTentative(), $this->bd->getStatJoueur($_SESSION['pseudo']));
-    } catch (MonException $e) {
-      $msg += $e->afficher();
+    } else {
+      $msg = "Vous avez reussi à gagner";
+      try {
+        $this->bd->ajoutStat($_SESSION['pseudo'], true, $_SESSION['jeu']->getTentative());
+      } catch (MonException $e) {
+        $msg = $msg."<br />". $e->afficher();
+      }
+      $this->vuePart->solution($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative(), $_SESSION['jeu']->getRes(), 1, $msg, $this->bd->getStat(), $this->bd->getStatJoueur($_SESSION['pseudo']));
     }
-    $this->vuePart->solution($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative(), $_SESSION['jeu']->getRes(), 1, $msg, $this->bd->getStat(), $this->bd->getStatJoueur($_SESSION['pseudo']));
   }
-}
 
-function newGame(){
-  $_SESSION['jeu'] = new Jeu();
-  $this->vuePart->acceuil(0,0,0,$this->bd->getStat(), $this->bd->getStatJoueur($_SESSION['pseudo']));
-}
-
-function affichage(){
-  if(isset($_SESSION['jeu'])){
-    $this->vuePart->acceuil($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative(), $this->bd->getStat(), $this->bd->getStatJoueur($_SESSION['pseudo']));
-  } else {
-    $this->vuePart->acceuil(0,0,0);
+  function newGame(){
+    $_SESSION['jeu'] = new Jeu();
+    $this->actualisation();
   }
-}
+
+  function affichage(){
+    if(isset($_SESSION['jeu'])){
+      $this->actualisation();
+    } else {
+      $this->vuePart->acceuil(0,0,0,$this->bd->getStat(), $this->bd->getStatJoueur($_SESSION['pseudo']));
+    }
+  }
 }

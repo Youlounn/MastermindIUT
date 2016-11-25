@@ -26,6 +26,7 @@ class Jeu{
 
   private $tentative;
   private $solution;
+  private $lastHit;
   private $historyGame;
   private $historyRes;
 
@@ -61,7 +62,12 @@ class Jeu{
     $this->historyRes[$this->tentative] = $res;
     $this->historyGame[$this->tentative] = $test;
     $this->tentative += 1;
+    $this->lastHit = $res;
     return $res;
+  }
+
+  function getLastHit(){
+    return $this->lastHit;
   }
 
   function fin(){

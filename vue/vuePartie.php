@@ -79,7 +79,7 @@ class VuePartie{
           </tbody>
         </table>
         <table id="form">
-          <caption>Séléction</caption>
+          <caption>Séléction, nombre de coup restant : <?php echo 10-$tentative;  ?></caption>
           <form method="POST" action="index.php">
             <tr>
               <td><input class="hide" onDblclick="colorClickDel('pion1')" onChange="colorClickEvol('pion1')" type="number" min="0" max="7" id="pion1" name="pion1" required><p class="edit">0</p></td>
