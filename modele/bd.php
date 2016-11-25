@@ -98,7 +98,7 @@
      $stmt=$this->connexion->query("INSERT INTO parties(pseudo,partieGagnee,nombreCoups) VALUE ('".$joueur."',".$gagner.",".$nbcoups.")");
    }
    catch(PDOException $e){
-     throw new TableAccessException("Erreur avec la table partie");
+     throw new TableAccesException("Erreur avec la table partie");
    }
  }
 
@@ -109,7 +109,7 @@
      $stmt->execute();
      $res = $stmt->fetchAll();
    } catch(PDOException $e) {
-     throw new TableAccessException("Erreur avec la table partie lors de la recuperation des meilleur score");
+     throw new TableAccesException("Erreur avec la table partie lors de la recuperation des meilleur score");
    }
    return $res;
  }
@@ -121,7 +121,7 @@
        $stmt->execute();
        $res = $stmt->fetchAll();
    } catch(PDOException $e) {
-     throw new TableAccessException("Erreur avec la table partie lors de la recuperation des statistiques du joueur");
+     throw new TableAccesException("Erreur avec la table partie lors de la recuperation des statistiques du joueur");
    }
    return $res;
  }

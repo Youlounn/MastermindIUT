@@ -15,7 +15,6 @@ class VuePartie{
   <body>
     <header>
       <div class="page">Jeu</div>
-      <button class="statButton">Meilleurs scores</button>
       <div class="title">Mastermind</div>
     </header>
     <div id="jeu">
