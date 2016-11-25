@@ -3,7 +3,7 @@ class VuePartie{
 
   //L'utilisateur est connecté, l'acceuil du jeu est affiché
 
-  function acceuil($partie, $result, $tentative, $stat){
+  function acceuil($partie, $result, $tentative, $stat, $statJoueur){
     header("Content-type: text/html; charset=utf-8");
     ?>
     <html>
@@ -136,6 +136,7 @@ class VuePartie{
           <input id="deco" type="submit" value="Deconnexion" />
         </form>
       </div>
+      <?php var_dump($statJoueur); ?>
     </body>
     <script>
     function colorClickDel(nom){
@@ -190,7 +191,7 @@ class VuePartie{
     <?php
   }
 
-  function solution($partie, $result, $tentative, $solution, $win, $msg, $stat){
+  function solution($partie, $result, $tentative, $solution, $win, $msg, $stat, $statJoueur){
     header("Content-type: text/html; charset=utf-8");
     ?>
     <html>

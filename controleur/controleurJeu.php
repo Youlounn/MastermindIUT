@@ -54,7 +54,7 @@ class ControleurJeu {
 
 function newGame(){
   $_SESSION['jeu'] = new Jeu();
-  $this->vuePart->acceuil(0,0,0);
+  $this->vuePart->acceuil(0,0,0,$this->bd->getStat(), $this->bd->getStatJoueur($_SESSION['pseudo']));
 }
 
 function affichage(){

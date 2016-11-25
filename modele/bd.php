@@ -31,7 +31,6 @@
  private $connexion;
 
  // Constructeur de la classe
- // remplacer X par les informations qui vous concernent
 
    public function __construct(){
     try{
