@@ -103,14 +103,15 @@
  }
 
  public function getStat() {
+   $res = array();
    try {
-     $stmt=$this->connexion->prepapre("SELECT pseudo, nombreCoups FROM parties ORDER BY nombreCoups limit 5");
+     $stmt=$this->connexion->prepare("SELECT pseudo, nombreCoups FROM parties ORDER BY nombreCoups limit 5");
      $stmt->execute();
-     $res = $stmt->fetch();
-     return res;
+     $res = $stmt->fetchAll();
    } catch(PDOException $e) {
      throw new TableAccessException("Erreur avec la table partie");
    }
+   return $res;
  }
 
 }

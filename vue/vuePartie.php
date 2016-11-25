@@ -15,6 +15,8 @@ class VuePartie{
   <body>
     <header>
       <div class="page">Jeu</div>
+      <button class="tutorialButton">Tutoriel</button>
+      <button class="statButton">Statistiques</button>
       <div class="title">Mastermind</div>
     </header>
     <div id="jeu">
@@ -114,12 +116,30 @@ class VuePartie{
             <td>Double cliqué sur une case qui possede une couleur pour lui enlevé</td>
           </tr>
         </table>
+        <table id="stats">
+          <thead>
+            <tr>
+              <td>Joueur</td>
+              <td>Nombre de coup</td>
+            </tr>
+          </thead>
+          <tbody>
+          <?php
+          foreach($stat as $score){
+            echo "<tr>
+            <td>".$score[0]."</td>
+            <td>".$score[1]."</td>
+            </tr>";
+          }
+
+          ?>
+          </tbody>
+        </table>
         <form method="post" action="index.php">
           <input type="hidden" name="sendType" value="2" />
           <input id="deco" type="submit" value="Deconnexion" />
         </form>
       </div>
-      <?php var_dump($stat); ?>
     </body>
     <script>
     function colorClickDel(nom){
@@ -272,6 +292,27 @@ class VuePartie{
             }
 
             ?>
+          </tbody>
+        </table>
+
+
+        <table id="stats">
+          <thead>
+            <tr>
+              <td>Joueur</td>
+              <td>Nombre de coup</td>
+            </tr>
+          </thead>
+          <tbody>
+          <?php
+          foreach($stat as $score){
+            echo "<tr>
+            <td>".$score[0]."</td>
+            <td>".$score[1]."</td>
+            </tr>";
+          }
+
+          ?>
           </tbody>
         </table>
 
