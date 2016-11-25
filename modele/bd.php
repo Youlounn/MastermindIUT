@@ -102,7 +102,17 @@
    }
  }
 
-}
+ public function getStat() {
+   try {
+     $stmt=$this->connexion->prepapre("SELECT pseudo, nombreCoups FROM parties ORDER BY nombreCoups limit 5");
+     $stmt->execute();
+     $res = $stmt->fetch();
+     return res;
+   } catch(PDOException $e) {
+     throw new TableAccessException("Erreur avec la table partie");
+   }
+ }
 
+}
 
 ?>
