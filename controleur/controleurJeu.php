@@ -41,7 +41,6 @@ class ControleurJeu {
         }
         $this->vuePart->solution($_SESSION['jeu']->getJeux(), $_SESSION['jeu']->getResPartie(), $_SESSION['jeu']->getTentative(), $_SESSION['jeu']->getRes(), 0, $msg);
       }
-    }
   } else {
     $msg = "Vous avez reussi a gagné";
     try {
