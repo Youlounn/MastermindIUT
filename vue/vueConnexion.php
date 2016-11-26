@@ -1,7 +1,10 @@
 <?php
 class VueConnexion{
 
-
+  /* Fonction appelée pour afficher l'acceuil
+  * Pré-condition :
+  * Post-condition : L'utilisateur voit l'acceuil
+  */
   function acceuil(){
     header("Content-type: text/html; charset=utf-8");
     ?>
@@ -30,6 +33,10 @@ class VueConnexion{
     <?php
   }
 
+  /* Fonction appelée pour afficher le message d'erreur de connection
+  * Pré-condition : La connection ne doit pas réussir
+  * Post-condition : L'acceuil est modifié en condition
+  */
   function echec($e){
     header("Content-type: text/html; charset=utf-8");
     ?>
@@ -64,6 +71,10 @@ class VueConnexion{
     <?php
   }
 
+  /* Fonction appelée pour afficher les informations
+  * Pré-condition :
+  * Post-condition : L'utilisateur voit l'acceuil modifié 
+  */
   function info($e){
     header("Content-type: text/html; charset=utf-8");
     ?>

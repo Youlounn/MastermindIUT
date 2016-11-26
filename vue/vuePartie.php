@@ -3,6 +3,11 @@ class VuePartie{
 
   //L'utilisateur est connecté, l'acceuil du jeu est affiché
 
+  /* Fonction appelée pour afficher l'acceuil d'une partie
+  * Pré-condition :
+  * Post-condition : L'utilisateur voit l'acceuil d'une partie
+  * Parameters : $partie la partie en cours, $result le résultat à afficher, $tentative le nombre de tentatives, $stat les statistiques présents, $statJoueur les statistiques d'un joueur
+  */
   function acceuil($partie, $result, $tentative, $stat, $statJoueur){
     header("Content-type: text/html; charset=utf-8");
     ?>
@@ -137,7 +142,7 @@ class VuePartie{
           </thead>
           <tbody>
           <tr>
-            <td>Meilleur score pour victoire</td>
+            <td>Meilleurs scores pour victoire</td>
             <td>
               <?php
               $old = 10;
@@ -151,7 +156,7 @@ class VuePartie{
             </td>
           </tr>
             <tr>
-              <td>Nombre de partie joué</td>
+              <td>Nombre de parties jouées</td>
               <td>
                 <?php
                 $cpt = 1;
@@ -163,7 +168,7 @@ class VuePartie{
               </td>
             </tr>
             <tr>
-              <td>Nombre de partie gagné</td>
+              <td>Nombre de parties gagnées</td>
               <td>
                 <?php
                 $cpt = 1;
@@ -177,7 +182,7 @@ class VuePartie{
               </td>
             </tr>
             <tr>
-              <td>Moyenne nombre de coup pour victoire</td>
+              <td>Moyenne nombre de coups pour victoire</td>
               <td>
                 <?php
                 $cpt = 1;
@@ -278,6 +283,11 @@ class VuePartie{
       <?php
     }
 
+    /* Fonction appelée pour afficher la solution
+    * Pré-condition : la partie doit être finie
+    * Post-condition : L'utilisateur voit la fin de sa partie sur la vue
+    * Parameters : $partie la partie en cours, $result le resultat du joueur, $tentative le nombre de tentatives, $solution la solution de cette partie, $win gagnée ou perdue, $msg affichage du resultat, $stat les statistiques présents, $statJoueur les statistiques d'un joueur
+    */
     function solution($partie, $result, $tentative, $solution, $win, $msg, $stat, $statJoueur){
       header("Content-type: text/html; charset=utf-8");
       ?>
@@ -378,7 +388,7 @@ class VuePartie{
               ?>
             </tr>
           </table>
-          
+
           <table id="stats">
             <thead>
               <tr>

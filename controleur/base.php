@@ -9,11 +9,19 @@ class Base{
   private $ctrlConnect;
   private $ctrlJeu;
 
+  /* Constructeur de la classe Base
+  * Pré-condition :
+  * Post-condition : Deux controleurs sont créés
+  */
   function __construct(){
     $this->ctrlConnect = new ControleurConnexion();
     $this->ctrlJeu = new ControleurJeu();
   }
 
+  /* Méthode permettant de lancer chaque controleur en fonction de ce qui est demandé
+  * Pré-condition : L'envoi d'un formulaires
+  * Post-condition : Appel d'une fonction d'un controleur en fonction du formulaire
+  */
   function lancement(){
     if(isset($_POST['sendType'])){ //Si la variable de formulaire est presente
       $sd = $_POST['sendType'];
